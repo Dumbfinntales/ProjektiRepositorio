@@ -51,36 +51,36 @@
 
 <div class="container">
     <h3>Yhteydenotto</h3>
-    <form>
+    <form action="php/yhteydenotto.php" method="POST">
         <div class="form-group">
-            <input type="text" class="form-control" placeholder="Etunimi">
+            <input type="text" class="form-control" placeholder="Etunimi" name="etunimi">
         </div>
         <div class="form-group">
-            <input type="text" class="form-control" placeholder="Sukunimi">
+            <input type="text" class="form-control" placeholder="Sukunimi" name="sukunimi">
         </div>
         <div class="form-group">
-          <input type="email" class="form-control" placeholder="Sähköposti">
+          <input type="email" class="form-control" placeholder="Sähköposti" name="sposti">
         </div>
         <div class="form-group">
-            <input type="text" class="form-control" placeholder="Puhelinnumero">
+            <input type="text" class="form-control" placeholder="Puhelinnumero" name="puhelin">
         </div>
         <div class="form-group">
-          <textarea class="form-control" placeholder="Viesti"></textarea>
+          <textarea class="form-control" placeholder="Viesti" name="viesti"></textarea>
         </div>
         <p>Haluan että minuun otetaan yhteyttä:</p>
         <div class="form-check">
-            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+            <input class="form-check-input" type="radio" name="yhteydenottotapa" id="exampleRadios1" value="option1" checked>
             <label class="form-check-label" for="exampleRadios1">
               puhelimitse
             </label>
           </div>
           <div class="form-check">
-            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+            <input class="form-check-input" type="radio" name="yhteydenottotapa" id="exampleRadios2" value="option2">
             <label class="form-check-label" for="exampleRadios2">
               sähköpostitse
             </label>
           </div><br>
-        <button type="submit" class="btn btn-primary">Lähetä</button>
+        <button name="laheta" type="submit" class="btn btn-primary">Lähetä</button>
       </form>
 </div>
 

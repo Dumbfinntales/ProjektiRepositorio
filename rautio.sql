@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 25, 2024 at 02:16 PM
--- Server version: 10.4.32-MariaDB
--- PHP Version: 8.2.12
+-- Generation Time: 26.04.2024 klo 12:31
+-- Palvelimen versio: 10.4.28-MariaDB
+-- PHP Version: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `asukas`
+-- Rakenne taululle `asukas`
 --
 
 CREATE TABLE `asukas` (
@@ -45,7 +45,7 @@ CREATE TABLE `asukas` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `asunnot`
+-- Rakenne taululle `asunnot`
 --
 
 CREATE TABLE `asunnot` (
@@ -57,7 +57,7 @@ CREATE TABLE `asunnot` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `isannoitsija`
+-- Rakenne taululle `isannoitsija`
 --
 
 CREATE TABLE `isannoitsija` (
@@ -74,7 +74,7 @@ CREATE TABLE `isannoitsija` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `kasittely`
+-- Rakenne taululle `kasittely`
 --
 
 CREATE TABLE `kasittely` (
@@ -89,7 +89,7 @@ CREATE TABLE `kasittely` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `kayttajatunnus`
+-- Rakenne taululle `kayttajatunnus`
 --
 
 CREATE TABLE `kayttajatunnus` (
@@ -103,7 +103,7 @@ CREATE TABLE `kayttajatunnus` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `salasana`
+-- Rakenne taululle `salasana`
 --
 
 CREATE TABLE `salasana` (
@@ -117,7 +117,7 @@ CREATE TABLE `salasana` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `taloyhtio`
+-- Rakenne taululle `taloyhtio`
 --
 
 CREATE TABLE `taloyhtio` (
@@ -132,13 +132,15 @@ CREATE TABLE `taloyhtio` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tyontekija`
+-- Rakenne taululle `tyontekija`
 --
 
 CREATE TABLE `tyontekija` (
   `tyontekijaID` int(11) NOT NULL,
   `etunimi` varchar(50) NOT NULL,
   `sukunimi` varchar(50) NOT NULL,
+  `sposti` varchar(50) NOT NULL,
+  `puhelin` varchar(50) NOT NULL,
   `status` tinyint(1) NOT NULL,
   `salasanaID` int(11) NOT NULL,
   `kayttajaID` int(11) NOT NULL,
@@ -149,7 +151,7 @@ CREATE TABLE `tyontekija` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `vikailmoitus`
+-- Rakenne taululle `vikailmoitus`
 --
 
 CREATE TABLE `vikailmoitus` (
@@ -164,6 +166,31 @@ CREATE TABLE `vikailmoitus` (
   `taloyhtioID` int(11) NOT NULL,
   `kasittelyID` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Rakenne taululle `yhteydenotto`
+--
+
+CREATE TABLE `yhteydenotto` (
+  `yhteydenottoID` int(11) NOT NULL,
+  `etunimi` varchar(50) NOT NULL,
+  `sukunimi` varchar(50) NOT NULL,
+  `sposti` varchar(50) NOT NULL,
+  `puhelin` varchar(25) NOT NULL,
+  `viesti` varchar(500) NOT NULL,
+  `yhteydenottotapa` varchar(25) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Vedos taulusta `yhteydenotto`
+--
+
+INSERT INTO `yhteydenotto` (`yhteydenottoID`, `etunimi`, `sukunimi`, `sposti`, `puhelin`, `viesti`, `yhteydenottotapa`) VALUES
+(1, 'Roope', 'Kokkonen', 'testi@testi.com', '040-444-555', 'juuu', 'asd'),
+(5, 'Miika', 'Kokkinen', 'juu@post.com', '444-4444-444', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop p', 'option1'),
+(6, 'Miika', 'Kokkinen', 'juu@post.com', '444-4444-444', 'Testiä', 'sähköpostitse');
 
 --
 -- Indexes for dumped tables
@@ -237,6 +264,12 @@ ALTER TABLE `vikailmoitus`
   ADD KEY `taloyhtioID` (`taloyhtioID`);
 
 --
+-- Indexes for table `yhteydenotto`
+--
+ALTER TABLE `yhteydenotto`
+  ADD PRIMARY KEY (`yhteydenottoID`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -289,11 +322,17 @@ ALTER TABLE `vikailmoitus`
   MODIFY `vikaID` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- Constraints for dumped tables
+-- AUTO_INCREMENT for table `yhteydenotto`
+--
+ALTER TABLE `yhteydenotto`
+  MODIFY `yhteydenottoID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
+-- Rajoitteet vedostauluille
 --
 
 --
--- Constraints for table `asukas`
+-- Rajoitteet taululle `asukas`
 --
 ALTER TABLE `asukas`
   ADD CONSTRAINT `asuntoID2` FOREIGN KEY (`asuntoID`) REFERENCES `asunnot` (`asuntoID`) ON DELETE NO ACTION ON UPDATE CASCADE,
@@ -301,28 +340,28 @@ ALTER TABLE `asukas`
   ADD CONSTRAINT `salasanaID` FOREIGN KEY (`salasanaID`) REFERENCES `salasana` (`salasanaID`) ON DELETE NO ACTION ON UPDATE CASCADE;
 
 --
--- Constraints for table `isannoitsija`
+-- Rajoitteet taululle `isannoitsija`
 --
 ALTER TABLE `isannoitsija`
   ADD CONSTRAINT `kayttajaID2` FOREIGN KEY (`kayttajaID`) REFERENCES `kayttajatunnus` (`kayttajaID`) ON DELETE NO ACTION ON UPDATE CASCADE,
   ADD CONSTRAINT `salasanaID2` FOREIGN KEY (`salasanaID`) REFERENCES `salasana` (`salasanaID`) ON DELETE NO ACTION ON UPDATE CASCADE;
 
 --
--- Constraints for table `kasittely`
+-- Rajoitteet taululle `kasittely`
 --
 ALTER TABLE `kasittely`
   ADD CONSTRAINT `tyontekijaID2` FOREIGN KEY (`tyontekijaID`) REFERENCES `tyontekija` (`tyontekijaID`) ON DELETE NO ACTION ON UPDATE CASCADE,
   ADD CONSTRAINT `vikaID2` FOREIGN KEY (`vikaID`) REFERENCES `vikailmoitus` (`vikaID`) ON DELETE NO ACTION ON UPDATE CASCADE;
 
 --
--- Constraints for table `tyontekija`
+-- Rajoitteet taululle `tyontekija`
 --
 ALTER TABLE `tyontekija`
   ADD CONSTRAINT `kayttajaID3` FOREIGN KEY (`kayttajaID`) REFERENCES `kayttajatunnus` (`kayttajaID`) ON DELETE NO ACTION ON UPDATE CASCADE,
   ADD CONSTRAINT `salasanaID3` FOREIGN KEY (`salasanaID`) REFERENCES `salasana` (`salasanaID`) ON DELETE NO ACTION ON UPDATE CASCADE;
 
 --
--- Constraints for table `vikailmoitus`
+-- Rajoitteet taululle `vikailmoitus`
 --
 ALTER TABLE `vikailmoitus`
   ADD CONSTRAINT `asukasID` FOREIGN KEY (`asukasID`) REFERENCES `asukas` (`asukasID`) ON DELETE NO ACTION ON UPDATE CASCADE,
