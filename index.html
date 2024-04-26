@@ -34,19 +34,19 @@
               <a class="nav-link" href="yhteydenotto.html">Ota yhteyttä</a>
             </li> 
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   Kirjaudu
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                  <a class="dropdown-item" href="#">Asukas</a>
-                  <a class="dropdown-item" href="#">Työntekijä</a>
-                  <a class="dropdown-item" href="#">Isännöitsijä</a>
+                  <button class="dropdown-item login-button">Asukas</button>
+                  <button class="dropdown-item login-button">Työntekijä</button>
+                  <button class="dropdown-item login-button">Isännöitsijä</button>
                 </div>
               </li>   
           </ul>
         </div>  
       </nav>
-      
+
 <div class="jumbotron">
   <div class="container">
   <a href="index.html"><img src="img/rautiologo.png"></a>
@@ -113,5 +113,30 @@
   </div>
 </footer>
 
+<!-- Kirjautumismodaali -->
+<div id="login-form" class="modal">
+  <div class="modal-background"></div>
+  <div class="modal-content">
+    <div class="modal-header">
+      <h2>Kirjaudu sisään</h2>
+      <span class="close-button">&times;</span>
+    </div>
+    <div class="modal-body">
+      <form>
+        <div class="form-group">
+          <label for="username">Käyttäjätunnus:</label>
+          <input type="text" id="username" name="username">
+        </div>
+        <div class="form-group">
+          <label for="password">Salasana:</label>
+          <input type="password" id="password" name="password">
+        </div>
+        <button type="submit">Kirjaudu</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script src="modal.js"></script>
 </body>
 </html>
