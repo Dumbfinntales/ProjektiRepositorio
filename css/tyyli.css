@@ -1,0 +1,26 @@
+body{
+    size: 100%;
+}
+
+.jumbotron{
+    text-align: center;
+    background: url('../img/city-view.jpg') top center fixed;
+    background-size: cover;
+    color: white;
+}
+
+.content{
+    text-align: center;
+    margin: 50;
+}
+
+.footer{
+    margin-bottom: 0;
+    color: white;
+}
+
+.footerBox{
+    background-color: rgba(0, 0, 0, 0.432);
+    height: 220px;
+    text-align: center;
+}
