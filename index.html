@@ -18,6 +18,7 @@
 
 <body>
 
+<<<<<<< Updated upstream
   <!--Navbar-->
   <nav class="navbar sticky-top navbar-expand-lg">
     
@@ -46,6 +47,36 @@
       </ul>
     </div>
   </nav>
+=======
+    <nav class="navbar navbar-expand-sm sticky-top bg-dark navbar-dark"> 
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse navbar-right" id="collapsibleNavbar">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Etusivu</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Yhteystiedot</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="yhteydenotto.html">Ota yhteyttä</a>
+            </li> 
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Kirjaudu
+                </a>
+                <div action="login.php" method="post" class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                  <button class="dropdown-item login-button">Asukas</button>
+                  <button class="dropdown-item login-button">Työntekijä</button>
+                  <button class="dropdown-item login-button">Isännöitsijä</button>
+                </div>
+              </li>   
+          </ul>
+        </div>  
+      </nav>
+>>>>>>> Stashed changes
 
 <!--Hiano logo sivulle-->
 <div class="jumbotron">
@@ -126,14 +157,15 @@
     <div class="modal-body">
       <form>
         <div class="form-group">
-          <label for="username">Käyttäjätunnus:</label>
-          <input type="text" id="username" name="username">
+          <label for="kayttajatunnus">Käyttäjätunnus:</label>
+          <input type="text" id="kayttajatunnus" name="kayttajatunnus">
         </div>
         <div class="form-group">
-          <label for="password">Salasana:</label>
-          <input type="password" id="password" name="password">
+          <label for="salasana">Salasana:</label>
+          <input type="password" id="salasana" name="salasana">
         </div>
         <button type="submit">Kirjaudu</button>
+        <div class="error"></div>
       </form>
     </div>
   </div>
