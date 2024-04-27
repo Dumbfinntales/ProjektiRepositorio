@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 26.04.2024 klo 12:31
+-- Generation Time: 26.04.2024 klo 22:10
 -- Palvelimen versio: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -103,6 +103,26 @@ CREATE TABLE `kayttajatunnus` (
 -- --------------------------------------------------------
 
 --
+-- Rakenne taululle `rooli`
+--
+
+CREATE TABLE `rooli` (
+  `rooliID` int(11) NOT NULL,
+  `rooli` varchar(30) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Vedos taulusta `rooli`
+--
+
+INSERT INTO `rooli` (`rooliID`, `rooli`) VALUES
+(1, 'toimisto'),
+(2, 'tyonjohtaja'),
+(3, 'tyontekija');
+
+-- --------------------------------------------------------
+
+--
 -- Rakenne taululle `salasana`
 --
 
@@ -141,10 +161,11 @@ CREATE TABLE `tyontekija` (
   `sukunimi` varchar(50) NOT NULL,
   `sposti` varchar(50) NOT NULL,
   `puhelin` varchar(50) NOT NULL,
+  `kuvapolku` varchar(50) NOT NULL,
   `status` tinyint(1) NOT NULL,
   `salasanaID` int(11) NOT NULL,
   `kayttajaID` int(11) NOT NULL,
-  `rooli` varchar(50) NOT NULL,
+  `rooliID` int(11) NOT NULL,
   `kasittelyID` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -217,7 +238,8 @@ ALTER TABLE `asunnot`
 ALTER TABLE `isannoitsija`
   ADD PRIMARY KEY (`isannoitsijaID`),
   ADD KEY `kayttajaID2` (`kayttajaID`),
-  ADD KEY `salasanaID2` (`salasanaID`);
+  ADD KEY `salasanaID2` (`salasanaID`),
+  ADD KEY `taloyhtioID2` (`taloyhtioID`);
 
 --
 -- Indexes for table `kasittely`
@@ -231,6 +253,12 @@ ALTER TABLE `kasittely`
 --
 ALTER TABLE `kayttajatunnus`
   ADD PRIMARY KEY (`kayttajaID`);
+
+--
+-- Indexes for table `rooli`
+--
+ALTER TABLE `rooli`
+  ADD PRIMARY KEY (`rooliID`);
 
 --
 -- Indexes for table `salasana`
@@ -250,7 +278,8 @@ ALTER TABLE `taloyhtio`
 ALTER TABLE `tyontekija`
   ADD PRIMARY KEY (`tyontekijaID`),
   ADD KEY `kayttajaID3` (`kayttajaID`),
-  ADD KEY `salasanaID3` (`salasanaID`);
+  ADD KEY `salasanaID3` (`salasanaID`),
+  ADD KEY `rooliID` (`rooliID`);
 
 --
 -- Indexes for table `vikailmoitus`
@@ -296,6 +325,12 @@ ALTER TABLE `isannoitsija`
 --
 ALTER TABLE `kayttajatunnus`
   MODIFY `kayttajaID` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `rooli`
+--
+ALTER TABLE `rooli`
+  MODIFY `rooliID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `salasana`
@@ -344,7 +379,8 @@ ALTER TABLE `asukas`
 --
 ALTER TABLE `isannoitsija`
   ADD CONSTRAINT `kayttajaID2` FOREIGN KEY (`kayttajaID`) REFERENCES `kayttajatunnus` (`kayttajaID`) ON DELETE NO ACTION ON UPDATE CASCADE,
-  ADD CONSTRAINT `salasanaID2` FOREIGN KEY (`salasanaID`) REFERENCES `salasana` (`salasanaID`) ON DELETE NO ACTION ON UPDATE CASCADE;
+  ADD CONSTRAINT `salasanaID2` FOREIGN KEY (`salasanaID`) REFERENCES `salasana` (`salasanaID`) ON DELETE NO ACTION ON UPDATE CASCADE,
+  ADD CONSTRAINT `taloyhtioID2` FOREIGN KEY (`taloyhtioID`) REFERENCES `taloyhtio` (`taloyhtioID`);
 
 --
 -- Rajoitteet taululle `kasittely`
@@ -358,6 +394,7 @@ ALTER TABLE `kasittely`
 --
 ALTER TABLE `tyontekija`
   ADD CONSTRAINT `kayttajaID3` FOREIGN KEY (`kayttajaID`) REFERENCES `kayttajatunnus` (`kayttajaID`) ON DELETE NO ACTION ON UPDATE CASCADE,
+  ADD CONSTRAINT `rooliID` FOREIGN KEY (`rooliID`) REFERENCES `rooli` (`rooliID`),
   ADD CONSTRAINT `salasanaID3` FOREIGN KEY (`salasanaID`) REFERENCES `salasana` (`salasanaID`) ON DELETE NO ACTION ON UPDATE CASCADE;
 
 --
