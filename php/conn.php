@@ -4,8 +4,8 @@ try{
 
     $palvelin       = "localhost";
     $tietokanta      = "rautio";
-    $tunnus       = "tyontekija";
-    $salasana   = "tyontekija12";
+    $tunnus       = "testiuser";
+    $salasana   = "salasana12";
 
 
     $yhteys = new PDO("mysql:host=$palvelin;dbname=$tietokanta;charset=utf8", "$tunnus", "$salasana");
