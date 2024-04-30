@@ -101,7 +101,7 @@
         </div>  
   </div>      
 
-  <footer class="jumbotron footer">
+  <footer class="jumbotron-fluid footer">
   <div class="col-lg-12 col-md-12 col-sm-12 footerBox">
   <!-- Section: Links  -->
   <section class="">
