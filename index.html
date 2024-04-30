@@ -12,6 +12,9 @@
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://kit.fontawesome.com/293af4024f.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+  integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+  crossorigin=""/>
   <link rel="stylesheet" href="css/tyyli.css">
   <link rel="icon" href="img/tablogo.png">
 </head>
@@ -58,11 +61,16 @@
 
 <!--Etusivun sisältöä, pitää miettiä mitä lisätä-->
 <div class="container content">
+
   <h3>Palvelut?</h3>
+
 <div class="card-columns">
   <div class="card bg-light">
     <div class="card-body text-center">
-      <p class="card-text">Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+      <p class="card-text">Mistä meidät löytää? Meren pohjasta näemmä.</p>
+      <div class="kartta-container">
+        <div id="kartta"></div>
+      </div>
     </div>
   </div>
   <div class="card bg-light">
@@ -92,7 +100,6 @@
   </div>
 </div>
 </div>
-
 <!-- Footer -->
 <footer class="jumbotron footer">
   <div class="col-lg-12 col-md-12 col-sm-12 footerBox">
@@ -141,6 +148,8 @@
   </div>
 </div>
 
+<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
 <script src="modal.js"></script>
+<script src="kartta.js"></script>
 </body>
 </html>
