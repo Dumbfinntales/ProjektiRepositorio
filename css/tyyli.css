@@ -109,7 +109,9 @@ label {
   color: red;
   cursor: pointer;
 }
-
+#kirjautumisotsikko{
+  color: black;
+}
 #kartta {
   height: 300px;
   width: 100%;
