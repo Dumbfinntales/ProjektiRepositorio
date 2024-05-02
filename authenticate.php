@@ -1,4 +1,5 @@
 <?php
+session_start();
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 include_once 'config.php';
@@ -32,6 +33,9 @@ if ($result->num_rows > 0) {
     $rooli_result = $conn->query($rooli_sql);
     $rooli_row = $rooli_result->fetch_assoc();
     $rooli = $rooli_row['rooli'];
+
+    // Tallenna käyttäjäID istuntoon
+    $_SESSION['kayttajaID'] = $kayttajaID;
 
     // Prepare JSON response
     $response = array(
