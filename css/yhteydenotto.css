@@ -8,10 +8,15 @@
       font-family: 'Futura';
   }
 
+.content{
+    padding: 20px;
+}
+
 .navbar{
-    background-color:rgba(0, 0, 0, 0.432);
     font-weight: bold;
     font-size: 1.1em;
+    text-shadow: 1px 1px 1px gray;
+    background-color: rgba(0,173,255,255);
 }
 
 .footer{
@@ -19,10 +24,13 @@
     left: 0;
     bottom: 0;
     width: 100%;
-    height: 20%;
+    height: 30%;
     text-align: center;
     color: white;
+    background: url('../img/city-view.jpg') top center fixed;
+    background-size: cover;
     padding: 5px;
+    padding: 20px;
 }
 
 .footerBox{

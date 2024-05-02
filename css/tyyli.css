@@ -4,7 +4,7 @@
 }
 
 body{
-    size: 100%;
+    height: 100%;
     font-family: 'Futura';
 }
 
@@ -26,13 +26,14 @@ body{
 
 .content{
     text-align: center;
-    margin: 50;
+    padding: 20px;
 }
 
 .navbar{
-    background-color:rgba(0, 0, 0, 0.432);
     font-weight: bold;
     font-size: 1.1em;
+    text-shadow: 1px 1px 1px gray;
+    background-color: rgba(0,173,255,255);
 }
 
 .footer{
@@ -42,6 +43,10 @@ body{
 
 .footerBox{
     background-color: rgba(0, 0, 0, 0.432);
+}
+
+.logo{
+  padding-top: 50px;
 }
 
 .modal {
@@ -105,27 +110,11 @@ label {
   cursor: pointer;
 }
 
-.navbar-toggler-icon {
-  width: 5em;
-  height: 1.5em;
-  background-image: none;
-  border: 2px dotted lightblue;
-  border-radius: 5px;
-  color: white;
-}
-
-.navbar-toggler-icon:before {
-  content: "Valikko";
-  font-size: 25px;
-}
-
-.navbar-toggler-icon:hover{
-  color: red;
-}
 #kartta {
   height: 300px;
   width: 100%;
 }
+
 .kartta-container {
   border: 1px solid #ccc;
   padding: 10px;

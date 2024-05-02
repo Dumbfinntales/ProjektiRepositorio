@@ -21,7 +21,7 @@
 </head>
 
 <body>
-<nav class="navbar sticky-top navbar-expand-lg">
+<nav class="navbar navbar-light sticky-top navbar-expand-lg" data-mdb-theme="light">
     
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -101,7 +101,7 @@
         </div>  
   </div>      
 
-  <footer class="jumbotron-fluid footer">
+  <footer class="jumbotron footer">
   <div class="col-lg-12 col-md-12 col-sm-12 footerBox">
   <!-- Section: Links  -->
   <section class="">
