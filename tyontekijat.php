@@ -21,7 +21,7 @@
 </head>
 
 <body>
-<nav class="navbar navbar-light sticky-top navbar-expand-lg" data-mdb-theme="light">
+<nav class="navbar sticky-top navbar-expand-lg">
     
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -60,7 +60,7 @@
             <?php foreach($data_toimisto as $toimisto): ?>
                 <div class="card text-center m-2">
                   <!-- kuvan kokoa en saanu lisättyä tyyli.css -->
-                  <img src="<?php echo $toimisto->kuvapolku; ?>" class="card-img-top mx-auto mt-4" alt="Kuva" style="width: 120px; height: auto;">
+                  <img src="<?php echo $toimisto->kuvapolku; ?>" class="card-img-top mx-auto mt-4 profile_img" alt="Kuva">
                     <div class="card-body">
                         <h6 class="text-uppercase"><?php echo $toimisto->etunimi. " " . $toimisto->sukunimi; ?></h5>
                         <p><i class="fa-solid fa-phone"></i> <?php echo $toimisto->puhelin; ?></p>
@@ -75,7 +75,7 @@
       <div class="row justify-content-center m-4 pb-4">
           <?php foreach($data_tyonjohto as $tyonjohto): ?>
               <div class="card text-center m-2">
-                <img src="<?php echo $tyonjohto->kuvapolku; ?>" class="card-img-top mx-auto mt-4" alt="Kuva" style="width: 120px; height: auto;">
+                <img src="<?php echo $tyonjohto->kuvapolku; ?>" class="card-img-top mx-auto mt-4 profile_img" alt="Kuva">
                   <div class="card-body">
                       <h6 class="text-uppercase"><?php echo $tyonjohto->etunimi . " " . $tyonjohto->sukunimi; ?></h5>
                       <p><i class="fa-solid fa-phone"></i> <?php echo $tyonjohto->puhelin; ?></p>
@@ -90,7 +90,7 @@
         <div class="row justify-content-center m-4 pb-4">
             <?php foreach($data_tyontekija as $tyontekija): ?>
                 <div class="card text-center m-2">
-                  <img src="<?php echo $tyontekija->kuvapolku; ?>" class="card-img-top mx-auto mt-4" alt="Kuva" style="width: 120px; height: auto;">
+                  <img src="<?php echo $tyontekija->kuvapolku; ?>" class="card-img-top mx-auto mt-4 profile_img" alt="Kuva">
                     <div class="card-body">
                         <h6 class="text-uppercase"><?php echo $tyontekija->etunimi . " " . $tyontekija->sukunimi; ?></h5>
                         <p><i class="fa-solid fa-phone"></i> <?php echo $tyontekija->puhelin; ?></p>
@@ -101,7 +101,7 @@
         </div>  
   </div>      
 
-  <footer class="jumbotron footer">
+  <footer class="jumbotron-fluid footer">
   <div class="col-lg-12 col-md-12 col-sm-12 footerBox">
   <!-- Section: Links  -->
   <section class="">
@@ -121,31 +121,7 @@
       <!--<a class="text-reset fw-bold" href="https://mdbootstrap.com/">MDBootstrap.com</a>-->
     </div>
   </div>
-
-  <div id="login-form" class="modal">
-  <div class="modal-background"></div>
-  <div class="modal-content">
-    <div class="modal-header">
-      <h2 id="kirjautumisotsikko">Kirjaudu sisään</h2>
-      <span class="close-button">&times;</span>
-    </div>
-    <div class="modal-body">
-      <form>
-        <div class="form-group">
-          <label for="kayttajatunnus">Käyttäjätunnus:</label>
-          <input type="text" id="kayttajatunnus" name="kayttajatunnus">
-        </div>
-        <div class="form-group">
-          <label for="salasana">Salasana:</label>
-          <input type="password" id="salasana" name="salasana">
-        </div>
-        <button type="submit">Kirjaudu</button>
-        <div class="error"></div>
-      </form>
-    </div>
-  </div>
-</div>
 </footer>
-<script src="modal.js"></script>
+
 </body>
 </html>
