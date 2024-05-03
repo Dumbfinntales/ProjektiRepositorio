@@ -3,8 +3,8 @@
 <head>
   <title>R.Autio Oy</title>
   <meta charset="utf-8">
-  <meta name="author" content="Roope, Miika, Riina ja Nico">
-  <meta name="keywords" content="website, school project">
+  <meta name="author" content=" ">
+  <meta name="keywords" content=" ">
   <meta name="description" content=" ">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
@@ -12,13 +12,10 @@
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://kit.fontawesome.com/293af4024f.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-  integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
-  crossorigin=""/>
-  <link rel="stylesheet" href="css/tyyli.css">
+  <script src="modal.js"></script>
+  <link rel="stylesheet" href="css/yhteydenotto.css">
   <link rel="icon" href="img/tablogo.png">
 </head>
-
 <body>
 
 <!--Navbar-->
@@ -60,64 +57,43 @@
   </div>
 </nav>
 
-<!--Hiano logo sivulle-->
-<div class="upper-jumbo">
-  <div class="container logo">
-  <a href="index.php"><img src="img/rautiologo.png"></a>
-  <p>R. Autio Oy, parasta palvelua Suomessa!</p>
-  </div>
+<div class="container content">
+    <h3>Yhteydenotto</h3>
+    <form action="php/yhteydenotto.php" method="POST">
+        <div class="form-group">
+            <input type="text" class="form-control" placeholder="Etunimi" name="etunimi">
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" placeholder="Sukunimi" name="sukunimi">
+        </div>
+        <div class="form-group">
+          <input type="email" class="form-control" placeholder="Sähköposti" name="sposti">
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" placeholder="Puhelinnumero" name="puhelin">
+        </div>
+        <div class="form-group">
+          <textarea class="form-control" placeholder="Viesti" name="viesti"></textarea>
+        </div>
+        <p>Haluan että minuun otetaan yhteyttä:</p>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="yhteydenottotapa" id="exampleRadios1" value="puhelimitse" checked>
+            <label class="form-check-label" for="exampleRadios1">
+              puhelimitse
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="yhteydenottotapa" id="exampleRadios2" value="sähköpostitse">
+            <label class="form-check-label" for="exampleRadios2">
+              sähköpostitse
+            </label>
+          </div><br>
+        <button name="laheta" type="submit" class="btn btn-primary">Lähetä</button>
+      </form>
 </div>
-
-<!--Palvelut-->
-<div class="container palvelut ">
-  <div class="row">
-    <div class="col-12 col-lg-6" > 
-    	<h2 class="h2_otsikko">Palvelut</h2>
-  		<p>Tavoitteenamme on tarjota ammattitaitoista palvelua,<br> 
-         joka kattaa kaikki kiinteistön pienistä huoltotehtävistä<br>
-         suurempiin remontteihin sekä ympäristön<br> kunnossapitoon.<br><br>
-         Voimme räätälöidä juuri teidän tarpeisiinne sopivan<br> 
-         palvelupaketin, joka pitää kiinteistönne turvallisena,<br> 
-         siistinä ja toimivana vuoden<br> jokaisena päivänä. </p>
-    </div>
-    <div class="col">
-      <div class="row " >
-        <div class="col m-2 shadow">
-          <img src="img/tyokalut.jpg" class="palvelut_img p-2">
-          <p>Huolto</p>
-        </div>
-        <div class="col m-2 shadow">
-          <img src="img/siivous.jpg" class="palvelut_img p-2">
-          <p>Puhtaus</p>   
-        </div>
-        <div class="col m-2 shadow">
-          <img src="img/lumi.jpg" class="palvelut_img p-2">
-          <p>Lumityöt</p>         
-        </div>
-        <div class="col m-2 shadow">
-          <img src="img/roskis.jpg" class="palvelut_img p-2">
-          <p>Jätehuolto</p> 
-        </div>
-        <div class="col m-2 shadow">
-          <img src="img/piha.jpg" class="palvelut_img p-2">
-          <p>Pihatyöt</p>    
-        </div>
-        <div class="col m-2 shadow">
-          <img src="img/avain.jpg" class="palvelut_img p-2" >
-          <p>24h Päivystys</p> 
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!--Kartta-->
-<div class="container-fluid kartta-container">
-  <div id="kartta"></div>
-</div> 
 
 <!-- Footer -->
-<footer class="jumbotron footer col-sm-12">
+<footer class="footer">
   <div class="col-lg-12 col-md-12 col-sm-12 footerBox">
   <section class="">
         <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
@@ -137,35 +113,32 @@
       <!--Jätän tuon ylemmän koodin tähän jos myöhemmin tarvitsee johonkin kivaan-->
     </div>
   </div>
-</footer>
-
-<!-- Kirjautumismodaali -->
-<div id="login-form" class="modal">
-  <div class="modal-background"></div>
-  <div class="modal-content">
-    <div class="modal-header">
-      <h2>Kirjaudu sisään</h2>
-      <span class="close-button">&times;</span>
-    </div>
-    <div class="modal-body">
-      <form>
-        <div class="form-group">
-          <label for="kayttajatunnus">Käyttäjätunnus:</label>
-          <input type="text" id="kayttajatunnus" name="kayttajatunnus">
-        </div>
-        <div class="form-group">
-          <label for="salasana">Salasana:</label>
-          <input type="password" id="salasana" name="salasana">
-        </div>
-        <button type="submit">Kirjaudu</button>
-        <div class="error"></div>
-      </form>
+  
+  <!-- Kirjautumismodaali -->
+  <div id="login-form" class="modal">
+    <div class="modal-background"></div>
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 id="kirjautumisotsikko">Kirjaudu sisään</h2>
+        <span class="close-button">&times;</span>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="kayttajatunnus">Käyttäjätunnus:</label>
+            <input type="text" id="kayttajatunnus" name="kayttajatunnus">
+          </div>
+          <div class="form-group">
+            <label for="salasana">Salasana:</label>
+            <input type="password" id="salasana" name="salasana">
+          </div>
+          <button type="submit">Kirjaudu</button>
+          <div class="error"></div>
+        </form>
+      </div>
     </div>
   </div>
-</div>
+</footer>
 
-<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
-<script src="modal.js"></script>
-<script src="kartta.js"></script>
 </body>
 </html>

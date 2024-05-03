@@ -12,7 +12,7 @@ if(isset($_SESSION['kayttajaID'])) {
     exit();
 } else {
     // Jos käyttäjä ei ole kirjautunut sisään, ohjaa käyttäjä kirjautumissivulle
-    header("Location: yhteydenotto.html"); // Ohjaa käyttäjä kirjautumissivulle
+    header("Location: yhteydenotto.php"); // Ohjaa käyttäjä kirjautumissivulle
     exit();
 }
 ?>
