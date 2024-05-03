@@ -109,15 +109,38 @@ label {
   color: red;
   cursor: pointer;
 }
+#kirjautumisotsikko{
+  color: black;
+}
 
+/*kartta*/
 #kartta {
   height: 300px;
   width: 100%;
 }
-
 .kartta-container {
-  border: 1px solid #ccc;
-  padding: 10px;
-  margin-top: 20px; 
-  margin-bottom: 20px; 
+  background-color: #0074a1;
+  padding: 50px;
+}
+
+/*työntekijät sivu*/
+.profile_img {
+  width: 120px; 
+  height: auto;
+} 
+
+/*palvelut*/
+.palvelut {
+  font-size: 18px;
+  text-align: center;
+  margin-top:50px;
+  margin-bottom: 50px;
+}
+.palvelut_img {
+  width: 100px;
+  height: auto;  
+}
+.h2_otsikko {
+  font-weight: bold;
+  color: #0074a1;
 }

@@ -50,6 +50,9 @@
           <a class="dropdown-item login-button">Työntekijä</a>
         </div>
       </li>
+      <form action="kirjaudu_ulos.php" method="post">
+        <button type="submit" name="logout">Kirjaudu ulos</button>
+    </form>
     </ul>
   </div>
 </nav>
@@ -62,47 +65,53 @@
   </div>
 </div>
 
-<!--Etusivun sisältöä, pitää miettiä mitä lisätä-->
-<div class="container content">
-
-  <h3>Palvelut?</h3>
-
-<div class="card-columns">
-  <div class="card bg-light">
-    <div class="card-body text-center">
-      <p class="card-text">Mistä meidät löytää? Meren pohjasta näemmä.</p>
-      <div class="kartta-container">
-        <div id="kartta"></div>
+<!--Palvelut-->
+<div class="container palvelut ">
+  <div class="row">
+    <div class="col-12 col-lg-6" > 
+    	<h2 class="h2_otsikko">Palvelut</h2>
+  		<p>Tavoitteenamme on tarjota ammattitaitoista palvelua,<br> 
+         joka kattaa kaikki kiinteistön pienistä huoltotehtävistä<br>
+         suurempiin remontteihin sekä ympäristön<br> kunnossapitoon.<br><br>
+         Voimme räätälöidä juuri teidän tarpeisiinne sopivan<br> 
+         palvelupaketin, joka pitää kiinteistönne turvallisena,<br> 
+         siistinä ja toimivana vuoden<br> jokaisena päivänä. </p>
+    </div>
+    <div class="col">
+      <div class="row " >
+        <div class="col m-2 shadow">
+          <img src="img/tyokalut.jpg" class="palvelut_img p-2">
+          <p>Huolto</p>
+        </div>
+        <div class="col m-2 shadow">
+          <img src="img/siivous.jpg" class="palvelut_img p-2">
+          <p>Puhtaus</p>   
+        </div>
+        <div class="col m-2 shadow">
+          <img src="img/lumi.jpg" class="palvelut_img p-2">
+          <p>Lumityöt</p>         
+        </div>
+        <div class="col m-2 shadow">
+          <img src="img/roskis.jpg" class="palvelut_img p-2">
+          <p>Jätehuolto</p> 
+        </div>
+        <div class="col m-2 shadow">
+          <img src="img/piha.jpg" class="palvelut_img p-2">
+          <p>Pihatyöt</p>    
+        </div>
+        <div class="col m-2 shadow">
+          <img src="img/avain.jpg" class="palvelut_img p-2" >
+          <p>24h Päivystys</p> 
+        </div>
       </div>
     </div>
   </div>
-  <div class="card bg-light">
-    <div class="card-body text-center">
-      <p class="card-text">Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
-    </div>
-  </div>
-  <div class="card bg-light">
-    <div class="card-body text-center">
-      <p class="card-text">Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
-    </div>
-  </div>
-  <div class="card bg-light">
-    <div class="card-body text-center">
-      <p class="card-text">Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
-    </div>
-  </div>
-  <div class="card bg-light">
-    <div class="card-body text-center">
-      <p class="card-text">Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
-    </div>
-  </div>
-  <div class="card bg-light">
-    <div class="card-body text-center">
-      <p class="card-text">Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
-    </div>
-  </div>
 </div>
-</div>
+
+<!--Kartta-->
+<div class="container-fluid kartta-container">
+  <div id="kartta"></div>
+</div> 
 
 <!-- Footer -->
 <footer class="jumbotron footer col-sm-12">
