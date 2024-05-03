@@ -121,6 +121,31 @@
       <!--<a class="text-reset fw-bold" href="https://mdbootstrap.com/">MDBootstrap.com</a>-->
     </div>
   </div>
+
+<!-- Kirjautumismodaali -->
+<div id="login-form" class="modal">
+  <div class="modal-background"></div>
+  <div class="modal-content">
+    <div class="modal-header">
+      <h2 id="kirjautumisotsikko">Kirjaudu sisään</h2>
+      <span class="close-button">&times;</span>
+    </div>
+    <div class="modal-body">
+      <form>
+        <div class="form-group">
+          <label for="kayttajatunnus">Käyttäjätunnus:</label>
+          <input type="text" id="kayttajatunnus" name="kayttajatunnus">
+        </div>
+        <div class="form-group">
+          <label for="salasana">Salasana:</label>
+          <input type="password" id="salasana" name="salasana">
+        </div>
+        <button type="submit">Kirjaudu</button>
+        <div class="error"></div>
+      </form>
+    </div>
+  </div>
+</div>
 </footer>
 
 </body>
