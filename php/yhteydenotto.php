@@ -22,5 +22,5 @@ if(isset($_POST['laheta'])){
             $yht->execute();
 
 }
-header("location:../index.html");
+header("location:../index.php");
 ?>

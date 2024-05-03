@@ -40,26 +40,26 @@
       <li class="nav-item">
         <a class="nav-link" href="yhteydenotto.html">Ota yhteyttä</a>
       </li>
-      <?php
-session_start();
+<?php
+  session_start();
 
-// Tarkista onko käyttäjä kirjautunut sisään
-if(isset($_SESSION['kayttajaID'])) {
-    // Jos käyttäjä on kirjautunut sisään, näytä kirjaudu ulos -nappi
-    echo '<a class="nav-link" href="kirjaudu_ulos.php">Kirjaudu ulos</a>';
-} else {
-  // Jos käyttäjä ei ole kirjautunut sisään, näytä kirjautumislinkki
-  echo '<li class="nav-item dropdown">
-  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Kirjaudu
-  </a>
-  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-    <a class="dropdown-item login-button">Asukas</a>
-    <a class="dropdown-item login-button">Isannöitsijä</a>
-    <a class="dropdown-item login-button">Työntekijä</a>
-  </div>
-</li>';
-}
+  // Tarkista onko käyttäjä kirjautunut sisään
+  if(isset($_SESSION['kayttajaID'])) {
+      // Jos käyttäjä on kirjautunut sisään, näytä kirjaudu ulos -nappi
+      echo '<a class="nav-link" href="kirjaudu_ulos.php">Kirjaudu ulos</a>';
+  } else {
+    // Jos käyttäjä ei ole kirjautunut sisään, näytä kirjautumislinkki
+    echo '<li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      Kirjaudu
+    </a>
+    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+      <a class="dropdown-item login-button">Asukas</a>
+      <a class="dropdown-item login-button">Isannöitsijä</a>
+      <a class="dropdown-item login-button">Työntekijä</a>
+    </div>
+  </li>';
+  }
 ?>
     </ul>
   </div>
