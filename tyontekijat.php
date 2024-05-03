@@ -37,7 +37,7 @@
           <a class="nav-link" href="tyontekijat.php">Työntekijät</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="yhteydenotto.html">Ota yhteyttä</a>
+          <a class="nav-link" href="yhteydenotto.php">Ota yhteyttä</a>
         </li>
 <?php
     session_start();
