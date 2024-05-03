@@ -16,6 +16,7 @@
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://kit.fontawesome.com/293af4024f.js" crossorigin="anonymous"></script>
+  <script src="modal.js"></script>
   <link rel="stylesheet" href="css/tyyli.css"> 
   <link rel="icon" href="img/tablogo.png">
 </head>
@@ -30,7 +31,7 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="index.html">Etusivu <span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="index.php">Etusivu <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="tyontekijat.php">Työntekijät</a>
@@ -121,6 +122,31 @@
       <!--<a class="text-reset fw-bold" href="https://mdbootstrap.com/">MDBootstrap.com</a>-->
     </div>
   </div>
+
+<!-- Kirjautumismodaali -->
+<div id="login-form" class="modal">
+  <div class="modal-background"></div>
+  <div class="modal-content">
+    <div class="modal-header">
+      <h2 id="kirjautumisotsikko">Kirjaudu sisään</h2>
+      <span class="close-button">&times;</span>
+    </div>
+    <div class="modal-body">
+      <form>
+        <div class="form-group">
+          <label for="kayttajatunnus">Käyttäjätunnus:</label>
+          <input type="text" id="kayttajatunnus" name="kayttajatunnus">
+        </div>
+        <div class="form-group">
+          <label for="salasana">Salasana:</label>
+          <input type="password" id="salasana" name="salasana">
+        </div>
+        <button type="submit">Kirjaudu</button>
+        <div class="error"></div>
+      </form>
+    </div>
+  </div>
+</div>
 </footer>
 
 </body>
