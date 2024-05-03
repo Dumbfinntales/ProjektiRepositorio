@@ -24,7 +24,7 @@
     left: 0;
     bottom: 0;
     width: 100%;
-    height: 30%;
+    height: 35%;
     text-align: center;
     color: white;
     background: url('../img/city-view.jpg') top center fixed;
@@ -35,4 +35,5 @@
 
 .footerBox{
     background-color: rgba(0, 0, 0, 0.432);
+    margin-top: 20px;
 }
