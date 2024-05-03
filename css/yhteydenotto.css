@@ -15,8 +15,8 @@
 .navbar{
     font-weight: bold;
     font-size: 1.1em;
-    text-shadow: 1px 1px 1px gray;
-    background-color: rgba(0,173,255,255);
+    text-shadow: 1px 1px 1px black;
+    background-color: #0074a1;
 }
 
 .footer{
