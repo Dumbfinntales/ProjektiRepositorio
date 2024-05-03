@@ -40,6 +40,9 @@
       <li class="nav-item">
         <a class="nav-link" href="yhteydenotto.php">Ota yhteyttä</a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link" href="vika.php">Huoltopyyntö</a>
+      </li>
 <?php
     session_start();
 
