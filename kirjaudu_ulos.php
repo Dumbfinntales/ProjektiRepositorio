@@ -8,7 +8,7 @@ include_once 'config.php';
 if(isset($_SESSION['kayttajaID'])) {
     // Jos käyttäjä on kirjautunut sisään, poista istuntotiedot ja ohjaa käyttäjä kirjautumissivulle
     session_destroy();
-    header("Location: index.html"); // Ohjaa käyttäjä kirjautumissivulle
+    header("Location: index.php"); // Ohjaa käyttäjä kirjautumissivulle
     exit();
 } else {
     // Jos käyttäjä ei ole kirjautunut sisään, ohjaa käyttäjä kirjautumissivulle

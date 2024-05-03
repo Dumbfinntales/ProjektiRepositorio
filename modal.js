@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     const response = JSON.parse(xhr.responseText);
                     if (response.success) {
                         // Redirect to dashboard or some other page
-                        window.location.href = 'index.html';
+                        window.location.href = 'index.php';
                     } else {
                         error.textContent = response.message;
                     }
