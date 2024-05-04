@@ -43,7 +43,9 @@
       <li class="nav-item">
         <a class="nav-link" href="vika.php">Huoltopyyntö</a>
       </li>
-<?php
+    </ul>
+    <ul class="navbar-nav">
+    <?php
     session_start();
 
     // Tarkista onko käyttäjä kirjautunut sisään

@@ -22,24 +22,32 @@
 </head>
 
 <body>
-<nav class="navbar navbar-dark sticky-top navbar-expand-lg">
+
+<!--Navbar-->
+<nav class="navbar navbar-dark sticky-top navbar-expand-lg" data-mdb-theme="light">
     
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-  
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="index.php">Etusivu <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="tyontekijat.php">Työntekijät</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="yhteydenotto.php">Ota yhteyttä</a>
-        </li>
-<?php
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="index.php">Etusivu <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+      <!-- laitettu nyt vain tähän, mietiään keille pitää näkyä-->
+        <a class="nav-link" href="tyontekijat.php">Työntekijät</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="yhteydenotto.php">Ota yhteyttä</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="vika.php">Huoltopyyntö</a>
+      </li>
+    </ul>
+    <ul class="navbar-nav">
+    <?php
     session_start();
 
     // Tarkista onko käyttäjä kirjautunut sisään
@@ -55,10 +63,9 @@
     </li>';
     }
 ?>
-      </ul>
-    </div>
-  </nav>
-
+    </ul>
+  </div>
+</nav>
   
   <div class="container pt-4 pb-4" >
           <!-- Kortit toimisto -->
@@ -108,13 +115,13 @@
         </div>  
   </div>      
 
-  <footer class="jumbotron-fluid footer">
+<!-- Footer -->
+<footer class="jumbotron footer col-sm-12">
   <div class="col-lg-12 col-md-12 col-sm-12 footerBox">
-  <!-- Section: Links  -->
   <section class="">
         <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
-          <!-- Links -->
-          <h6 class="text-uppercase fw-bold mb-4">Tiedot</h6>
+          <!-- Yhteystiedot -->
+          <h6 class="text-uppercase fw-bold mb-4">Yhteystiedot</h6>
           <p><i class="fas fa-home me-3"></i> Tornio, 95400, Suomi</p>
           <p>
             <i class="fas fa-envelope me-3"></i>
@@ -126,8 +133,10 @@
     <div class="p-4">
       © 2024 Copyright: KoodariRyhmä
       <!--<a class="text-reset fw-bold" href="https://mdbootstrap.com/">MDBootstrap.com</a>-->
+      <!--Jätän tuon ylemmän koodin tähän jos myöhemmin tarvitsee johonkin kivaan-->
     </div>
   </div>
+</footer>
 
 <!-- Kirjautumismodaali -->
 <div id="login-form" class="modal">

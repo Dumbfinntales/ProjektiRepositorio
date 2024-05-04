@@ -1,12 +1,7 @@
-@font-face{
-    font-family: 'Futura';
-    src: url('../fonts/futur.ttf');
-  }
-  
-  body{
-      height: 100%;
-      font-family: 'Futura';
-  }
+body{
+  height: 100%;
+  font-family: 'Montserrat', 'sans-serif';
+}
 
 .content{
     padding: 20px;

@@ -1,6 +1,6 @@
 body{
     height: 100%;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Montserrat', sans-serif !important;
 }
 
 .jumbotron{
@@ -24,6 +24,15 @@ body{
     padding: 20px;
 }
 
+.vika-content{
+  padding: 20px;
+}
+
+.inline-label {
+  display: inline-block;
+  margin-right: 20px; /* Voit säätää marginaalia tarpeen mukaan */
+}
+
 .navbar{
     font-weight: bold;
     font-size: 1.1em;
@@ -42,6 +51,10 @@ body{
 
 .logo{
   padding-top: 50px;
+}
+
+ul{
+  list-style-type: none;
 }
 
 .modal {
@@ -79,9 +92,7 @@ input[type="password"] {
 button[type="submit"] {
   width: 100%; 
   padding: 10px;
-  margin-left: 5px;
-  /*background-color: #e2b37e;*/
-  background-color: lightblue;
+  background-color: #0074a1;
   text-shadow: 1px 1px 1px black;
   color: #fff; 
   border: none; 

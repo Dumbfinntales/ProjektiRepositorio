@@ -41,7 +41,9 @@
       <li class="nav-item">
         <a class="nav-link" href="vika.php">Huoltopyyntö</a>
       </li>
-<?php
+    </ul>
+    <ul class="navbar-nav">
+    <?php
     session_start();
 
     // Tarkista onko käyttäjä kirjautunut sisään
@@ -62,13 +64,13 @@
 </nav>
 
 
-<div class="container">
-    <div class="row"><h2>Huoltopyyntö</h2>
-    </div>
+<div class="container vika-content">
+    <h2>Huoltopyyntö</h2>
+
     <!--Huoltopyyntö lomake-->
     <form action="php/uusi_vika.php" method="POST">
-        <h3>Kohteen tiedot:</h3><br>
-
+      <br>
+      <div class="inline-label">
         <label for="taloyhtio">Valitse taloyhtiö:</label>
         <select id="taloyhtio" name="taloyhtio" onchange="haeAsunnot(this.value)">
             <option value="">Valitse taloyhtiö</option>
@@ -85,43 +87,52 @@
                 }
             }
             ?>
-        </select><br>
+        </select>
+      </div>
 
+      <div class="inline-label">
         <label for="asunto">Valitse asunto:</label>
-        <select id="asunto" name="asunto">
+        <select id="asunto"  name="asunto">
             <option value="">Valitse asunto</option>
-        </select><br>
+        </select>
+      </div><br><br>
 
         <label for="kohde">Kohde:</label>
-        <input type="text" id="kohde" name="kohde" required><br>
+        <input type="text" id="kohde" name="kohde" required><br><br>
 
         <label for="viesti">Viesti:</label>
-        <textarea id="viesti" name="viesti" required placeholder="Kuvaile huollon kohde ja tarve mahdollisimman tarkasti."></textarea><br>
+        <textarea id="viesti" name="viesti" required placeholder="Kuvaile huollon kohde ja tarve mahdollisimman tarkasti."></textarea><br><br>
 
-        <label for="lemmikit">Huoneistossa lemmikkejä <input type="checkbox" id="lemmikit" name="lemmikit" value="1"></label><br>
+        <div class="inline-label">
+          <label for="lemmikit">Huoneistossa lemmikkejä <input type="checkbox" id="lemmikit" name="lemmikit" value="1"></label><br>
+        </div>
 
-        <label for="yleisavain">Saa käyttää yleisavainta <input type="checkbox" id="yleisavain" name="yleisavain" value="1"></label><br>
-        
+        <div class="inline-label">
+          <label for="yleisavain">Saa käyttää yleisavainta <input type="checkbox" id="yleisavain" name="yleisavain" value="1"></label><br>
+        </div>
+
         <label for="etunimi">Etunimi:</label>
-        <input type="text" id="etunimi" name="etunimi" required><br>
+        <input type="text" id="etunimi" name="etunimi" required><br><br>
 
         <label for="sukunimi">Sukunimi:</label>
-        <input type="text" id="sukunimi" name="sukunimi" required><br>
+        <input type="text" id="sukunimi" name="sukunimi" required><br><br>
+        
+        <div class="inline-label">
+          <label for="sposti">Sähköposti:</label>
+          <input type="email" id="sposti" name="sposti" required><br><br>
+        </div>
 
-        <label for="sposti">Sähköposti:</label>
-        <input type="email" id="sposti" name="sposti" required><br>
-
-        <label for="puhelin">Puhelin:</label>
-        <input type="tel" id="puhelin" name="puhelin" required><br>
-
+        <div class="inline-label">
+          <label for="puhelin">Puhelin:</label>
+          <input type="tel" id="puhelin" name="puhelin" required><br><br>
+        </div>
+        
         <button name="laheta" type="submit" class="btn btn-warning">Lähetä</button>
     </form>
 </div>
 
-
-
 <!-- Footer -->
-<footer class="footer">
+<footer class="jumbotron footer col-sm-12">
   <div class="col-lg-12 col-md-12 col-sm-12 footerBox">
   <section class="">
         <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
@@ -141,6 +152,7 @@
       <!--Jätän tuon ylemmän koodin tähän jos myöhemmin tarvitsee johonkin kivaan-->
     </div>
   </div>
+</footer>
   
   <!-- Kirjautumismodaali -->
   <div id="login-form" class="modal">

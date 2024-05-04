@@ -37,7 +37,12 @@
       <li class="nav-item">
         <a class="nav-link" href="yhteydenotto.php">Ota yhteyttä</a>
       </li>
-<?php
+      <li class="nav-item">
+        <a class="nav-link" href="vika.php">Huoltopyyntö</a>
+      </li>
+    </ul>
+    <ul class="navbar-nav">
+    <?php
     session_start();
 
     // Tarkista onko käyttäjä kirjautunut sisään
