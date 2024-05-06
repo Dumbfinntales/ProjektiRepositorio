@@ -33,11 +33,11 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="index.php">Etusivu <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="index.php">Etusivu</a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item active">
       <!-- laitettu nyt vain tähän, mietiään keille pitää näkyä-->
-        <a class="nav-link" href="tyontekijat.php">Työntekijät</a>
+        <a class="nav-link" href="tyontekijat.php">Työntekijät <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="yhteydenotto.php">Ota yhteyttä</a>

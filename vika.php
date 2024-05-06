@@ -28,8 +28,8 @@
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="index.php">Etusivu <span class="sr-only">(current)</span></a>
+      <li class="nav-item">
+        <a class="nav-link" href="index.php">Etusivu</a>
       </li>
       <li class="nav-item">
       <!-- laitettu nyt vain tähän, mietiään keille pitää näkyä-->
@@ -38,8 +38,8 @@
       <li class="nav-item">
         <a class="nav-link" href="yhteydenotto.php">Ota yhteyttä</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="vika.php">Huoltopyyntö</a>
+      <li class="nav-item active">
+        <a class="nav-link" href="vika.php">Huoltopyyntö <span class="sr-only">(current)</span></a>
       </li>
     </ul>
     <ul class="navbar-nav">
@@ -101,7 +101,7 @@
         <input type="text" id="kohde" name="kohde" required><br><br>
 
         <label for="viesti">Viesti:</label>
-        <textarea id="viesti" name="viesti" required placeholder="Kuvaile huollon kohde ja tarve mahdollisimman tarkasti."></textarea><br><br>
+        <textarea id="viesti" class="form-control" name="viesti" required placeholder="Kuvaile huollon kohde ja tarve mahdollisimman tarkasti."></textarea><br><br>
 
         <div class="inline-label">
           <label for="lemmikit">Huoneistossa lemmikkejä <input type="checkbox" id="lemmikit" name="lemmikit" value="1"></label><br>

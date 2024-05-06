@@ -27,15 +27,15 @@
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="index.php">Etusivu <span class="sr-only">(current)</span></a>
+      <li class="nav-item">
+        <a class="nav-link" href="index.php">Etusivu</a>
       </li>
       <li class="nav-item">
       <!-- laitettu nyt vain tähän, mietiään keille pitää näkyä-->
         <a class="nav-link" href="tyontekijat.php">Työntekijät</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="yhteydenotto.php">Ota yhteyttä</a>
+      <li class="nav-item active">
+        <a class="nav-link" href="yhteydenotto.php">Ota yhteyttä <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="vika.php">Huoltopyyntö</a>
@@ -62,7 +62,7 @@
   </div>
 </nav>
 
-<div class="container content">
+<div class="container col-lg-6 col-md-6 col-sm-12 content">
     <h3>Yhteydenotto</h3>
     <form action="php/yhteydenotto.php" method="POST">
         <div class="form-group">
@@ -72,13 +72,13 @@
             <input type="text" class="form-control" placeholder="Sukunimi" name="sukunimi">
         </div>
         <div class="form-group">
-          <input type="email" class="form-control" placeholder="Sähköposti" name="sposti">
+          <input type="text" class="form-control" placeholder="Sähköposti" name="sposti">
         </div>
         <div class="form-group">
             <input type="text" class="form-control" placeholder="Puhelinnumero" name="puhelin">
         </div>
         <div class="form-group">
-          <textarea class="form-control" placeholder="Viesti" name="viesti"></textarea>
+          <textarea class="form-control" placeholder="Viesti" name="viesti"></textarea><br>
         </div>
         <p>Haluan että minuun otetaan yhteyttä:</p>
         <div class="form-check">
@@ -98,7 +98,7 @@
 </div>
 
 <!-- Footer -->
-<footer class="footer">
+<footer class="footer jumbotron">
   <div class="col-lg-12 col-md-12 col-sm-12 footerBox">
   <section class="">
         <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
