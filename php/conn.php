@@ -11,7 +11,7 @@ try{
     $yhteys = new PDO("mysql:host=$palvelin;dbname=$tietokanta;charset=utf8", "$tunnus", "$salasana");
     $yhteys->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    echo "Onnistuikohanko!";
+    //echo "Onnistuikohanko!";
 }catch(PDOException $e){
     print "<p>Tietokantayhteyden avaaminen epäonnistui.</P>" . $e -> getMessage();
 }

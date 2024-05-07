@@ -40,22 +40,25 @@
       <li class="nav-item">
         <a class="nav-link" href="yhteydenotto.php">Ota yhteyttä</a>
       </li>
-      <li class="nav-item">
+<?php
+    session_start();
+    if(isset($_SESSION['kayttajaID'])) {
+      echo '<li class="nav-item">
         <a class="nav-link" href="vika.php">Huoltopyyntö</a>
-      </li>
+      </li>';
+    }
+?>
     </ul>
     <ul class="navbar-nav">
-    <?php
-    session_start();
-
+<?php
     // Tarkista onko käyttäjä kirjautunut sisään
     if(isset($_SESSION['kayttajaID'])) {
         // Jos käyttäjä on kirjautunut sisään, näytä kirjaudu ulos -nappi
         echo '<a class="nav-link" href="kirjaudu_ulos.php">Kirjaudu ulos</a>';
     } else {
       // Jos käyttäjä ei ole kirjautunut sisään, näytä kirjautumislinkki
-      echo '<li class="nav-item dropdown">
-      <a class="nav-link login-button" href="#" id="login-button" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      echo '<li class="nav-item">
+      <a class="nav-link login-button" href="#" id="login-button" role="button" aria-haspopup="true" aria-expanded="false">
         Kirjaudu
       </a>
     </li>';
