@@ -139,8 +139,9 @@ label {
 
 /*työntekijät sivu*/
 .profile_img {
-  width: 120px; 
+  width: 150px; 
   height: auto;
+  border: 2px solid;
 } 
 
 /*palvelut*/
