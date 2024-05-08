@@ -47,7 +47,7 @@
   }
   if(isset($_SESSION['kayttajaID']) && $_SESSION['kayttajaID'] == 3) {
     echo '<li class="nav-item">
-    <a class="nav-link" href="ilmoituslistaus.php">Vikailmoitukset</a>
+    <a class="nav-link active" href="ilmoituslistaus.php">Vikailmoitukset</a>
   </li>';
   }
 ?>
@@ -96,12 +96,13 @@ try {
 </head>
 <body>
 
-<h2>Vikailmoitukset</h2>
+<h2 class="vikah2">Vikailmoitukset</h2>
+<div class="container-fluid p-3">
 
 <?php if (isset($entries) && !empty($entries)) : ?>
-    <ul>
+    <div class="row">
         <?php foreach ($entries as $entry) : ?>
-            <li>
+            <div class="col-md-3">
                 <strong>Kohde:</strong> <?php echo $entry['kohde']; ?><br>
                 <strong>Viesti:</strong> <?php echo $entry['viesti']; ?><br>
                 <strong>Lemmikit:</strong> <?php echo $entry['lemmikit'] ? 'Kyllä' : 'Ei'; ?><br>
@@ -112,12 +113,29 @@ try {
                 <strong>Puhelin:</strong> <?php echo $entry['puhelin']; ?><br>
                 <strong>Taloyhtiö:</strong> <?php echo $entry['taloyhtio_nimi']; ?><br>
                 <strong>Asunnon osoite:</strong> <?php echo $entry['asunnon_osoite']; ?><br>
-            </li>
+                <select id="tyontekija" name="tyontekija">
+                  <option value="">< Valitse ></option>
+                  <?php
+                  //Haetaan työntekijät
+                  include 'php/conn.php';
+                  
+                  $sql = "SELECT tyontekijaID, etunimi, sukunimi FROM tyontekija";
+                  $result = $yhteys->query($sql);
+                  
+                  if ($result->rowCount() > 0) {
+                      while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
+                          echo "<option value='{$row['tyontekijaID']}'>{$row['etunimi']} {$row['sukunimi']}</option>";
+                      }
+                  }
+                  ?>
+                </select><br><br>
+            </div>
         <?php endforeach; ?>
-    </ul>
+      </div>
 <?php else : ?>
     <p>Ei vikailmoituksia.</p>
 <?php endif; ?>
+</div>
   
 
 <!-- Kirjautumismodaali -->

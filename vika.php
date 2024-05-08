@@ -41,7 +41,7 @@
 <?php
     session_start();
     if(isset($_SESSION['kayttajaID'])) {
-      echo '<li class="nav-item">
+      echo '<li class="nav-item active">
         <a class="nav-link" href="vika.php">Huoltopyyntö</a>
       </li>';
     }
