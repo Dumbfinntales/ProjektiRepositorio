@@ -38,14 +38,20 @@
       <li class="nav-item">
         <a class="nav-link" href="yhteydenotto.php">Ota yhteyttä</a>
       </li>
-<?php
+      <?php
     session_start();
     if(isset($_SESSION['kayttajaID'])) {
       echo '<li class="nav-item">
         <a class="nav-link" href="vika.php">Huoltopyyntö</a>
       </li>';
-    }
+  }
+  if(isset($_SESSION['kayttajaID']) && $_SESSION['kayttajaID'] == 3) {
+    echo '<li class="nav-item">
+    <a class="nav-link" href="ilmoituslistaus.php">Vikailmoitukset</a>
+  </li>';
+  }
 ?>
+
     </ul>
     <ul class="navbar-nav">
 <?php
