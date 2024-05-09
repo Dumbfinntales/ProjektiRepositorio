@@ -137,12 +137,23 @@ label {
   padding: 50px;
 }
 
+
 /*työntekijät sivu*/
 .profile_img {
-  width: 150px; 
+  width: 120px; 
   height: auto;
-  border: 2px solid;
 } 
+.otsikko {
+  font-weight: bold;
+  color: #0074a1;
+}
+.iconi {
+  color: #0074a1;
+}
+.nimi {
+  font-weight: bold;
+  padding-bottom: 8px;
+}
 
 /*palvelut*/
 .palvelut {
@@ -155,10 +166,43 @@ label {
   width: 100px;
   height: auto;  
 }
-.h2_otsikko {
-  font-weight: bold;
-  color: #0074a1;
+
+/*referenssit*/
+.a {
+  margin-top: 80px;
+  margin-bottom:60px;
 }
+.a_teksti {
+  font-size: 18px;
+  text-align: right;
+}
+.b {
+  margin-bottom:60px;
+  background-color: #eeeeee;
+}
+.b_lista{
+  list-style-type: square;
+}
+.b_img {
+  width:100%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.324);
+}
+.c {
+  margin-bottom:60px; 
+}
+.c_img {
+ width:100%;
+ height: auto;
+}
+.d {
+  padding-bottom: 60px;
+  background-color: #eeeeee;
+}
+.d_palaute {
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.324);
+}
+
 
 .vikah2{
   text-align: center;
