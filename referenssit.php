@@ -1,3 +1,5 @@
+<?php require "php/hae_taloyhtiot.php";?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
