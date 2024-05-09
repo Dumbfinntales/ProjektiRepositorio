@@ -88,7 +88,7 @@
 <div class="container palvelut ">
   <div class="row">
     <div class="col-12 col-lg-6" > 
-    	<h2 class="h2_otsikko">Palvelut</h2>
+    	<h2 class="otsikko">Palvelut</h2>
   		<p>Tavoitteenamme on tarjota ammattitaitoista palvelua,<br> 
          joka kattaa kaikki kiinteistön pienistä huoltotehtävistä<br>
          suurempiin remontteihin sekä ympäristön<br> kunnossapitoon.<br><br>
