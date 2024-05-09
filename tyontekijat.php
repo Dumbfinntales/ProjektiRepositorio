@@ -35,8 +35,10 @@
       <li class="nav-item">
         <a class="nav-link" href="index.php">Etusivu</a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link" href="referenssit.php">Referenssit</a>
+      </li>
       <li class="nav-item active">
-      <!-- laitettu nyt vain tähän, mietiään keille pitää näkyä-->
         <a class="nav-link" href="tyontekijat.php">Työntekijät <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
@@ -85,9 +87,9 @@
                   <!-- kuvan kokoa en saanu lisättyä tyyli.css -->
                   <img src="<?php echo $toimisto->kuvapolku; ?>" class="card-img-top mx-auto mt-4 profile_img" alt="Kuva">
                     <div class="card-body">
-                        <h6 class="text-uppercase"><?php echo $toimisto->etunimi. " " . $toimisto->sukunimi; ?></h5>
-                        <p><i class="fa-solid fa-phone"></i> <?php echo $toimisto->puhelin; ?></p>
-                        <p><i class="fa-solid fa-envelope"></i> <?php echo $toimisto->sposti; ?></p>                 
+                        <h6 class="text-uppercase nimi"><?php echo $toimisto->etunimi. " " . $toimisto->sukunimi; ?></h5>
+                        <p><i class="fa-solid fa-phone iconi"></i> <?php echo $toimisto->puhelin; ?></p>
+                        <p><i class="fa-solid fa-envelope iconi"></i> <?php echo $toimisto->sposti; ?></p>                 
                     </div>
                 </div>
             <?php endforeach; ?>
@@ -100,9 +102,9 @@
               <div class="card text-center m-2">
                 <img src="<?php echo $tyonjohto->kuvapolku; ?>" class="card-img-top mx-auto mt-4 profile_img" alt="Kuva">
                   <div class="card-body">
-                      <h6 class="text-uppercase"><?php echo $tyonjohto->etunimi . " " . $tyonjohto->sukunimi; ?></h5>
-                      <p><i class="fa-solid fa-phone"></i> <?php echo $tyonjohto->puhelin; ?></p>
-                      <p><i class="fa-solid fa-envelope"></i> <?php echo $tyonjohto->sposti; ?></p>                 
+                      <h6 class="text-uppercase nimi"><?php echo $tyonjohto->etunimi . " " . $tyonjohto->sukunimi; ?></h5>
+                      <p><i class="fa-solid fa-phone iconi"></i> <?php echo $tyonjohto->puhelin; ?></p>
+                      <p><i class="fa-solid fa-envelope iconi"></i> <?php echo $tyonjohto->sposti; ?></p>                 
                   </div>  
               </div>
           <?php endforeach; ?>
@@ -115,9 +117,9 @@
                 <div class="card text-center m-2">
                   <img src="<?php echo $tyontekija->kuvapolku; ?>" class="card-img-top mx-auto mt-4 profile_img" alt="Kuva">
                     <div class="card-body">
-                        <h6 class="text-uppercase"><?php echo $tyontekija->etunimi . " " . $tyontekija->sukunimi; ?></h5>
-                        <p><i class="fa-solid fa-phone"></i> <?php echo $tyontekija->puhelin; ?></p>
-                        <p><i class="fa-solid fa-envelope"></i> <?php echo $tyontekija->sposti; ?></p>                 
+                        <h6 class="text-uppercase nimi"><?php echo $tyontekija->etunimi . " " . $tyontekija->sukunimi; ?></h5>
+                        <p><i class="fa-solid fa-phone iconi"></i> <?php echo $tyontekija->puhelin; ?></p>
+                        <p><i class="fa-solid fa-envelope iconi"></i> <?php echo $tyontekija->sposti; ?></p>                 
                     </div>
                 </div>
             <?php endforeach; ?>
