@@ -77,10 +77,11 @@ include 'php/conn.php';
 
 try {
     // Retrieve all entries from the database with related data
-    $sql = "SELECT v.*, t.nimi AS taloyhtio_nimi, a.huoneisto AS asunnon_osoite
-            FROM vikailmoitus v
-            JOIN taloyhtio t ON v.taloyhtioID = t.taloyhtioID
-            JOIN asunnot a ON v.asuntoID = a.asuntoID";
+    $sql = "SELECT k.*, ty.etunimi AS t_etunimi, ty.sukunimi AS t_sukunimi,
+    t.nimi AS taloyhtio_nimi, a.huoneisto AS asunto FROM kasittely k
+    JOIN tyontekija ty ON k.tyontekijaID = ty.tyontekijaID
+    JOIN taloyhtio t ON k.taloyhtioID = t.taloyhtioID
+    JOIN asunnot a ON k.asuntoID = a.asuntoID";
     $stmt = $yhteys->query($sql);
     $entries = $stmt->fetchAll(PDO::FETCH_ASSOC);
 } catch (PDOException $e) {
@@ -95,80 +96,36 @@ try {
     <title>Vikailmoitukset</title>
 </head>
 <body>
-
-<form action="php/lisaa_tyo.php" method="POST">
 <h2 class="vikah2">Vikailmoitukset</h2>
 <div class="container-fluid p-3">
-
+<form action="php/lisaa_tyo.php" method="POST">
 <?php if (isset($entries) && !empty($entries)) : ?>
     <div class="row">
         <?php foreach ($entries as $entry) : ?>
             <div class="col-md-3">
                 <strong>Kohde:</strong> <?php echo $entry['kohde']; ?><br>
-
                 <strong>Viesti:</strong> <?php echo $entry['viesti']; ?><br>
-
                 <strong>Lemmikit:</strong> <?php echo $entry['lemmikit'] ? 'Kyllä' : 'Ei'; ?><br>
-
                 <strong>Yleisavain:</strong> <?php echo $entry['yleisavain'] ? 'Kyllä' : 'Ei'; ?><br>
-
                 <strong>Etunimi:</strong> <?php echo $entry['etunimi']; ?><br>
-
                 <strong>Sukunimi:</strong> <?php echo $entry['sukunimi']; ?><br>
-
                 <strong>Sähköposti:</strong> <?php echo $entry['sposti']; ?><br>
-
                 <strong>Puhelin:</strong> <?php echo $entry['puhelin']; ?><br>
-
                 <strong>Taloyhtiö:</strong> <?php echo $entry['taloyhtio_nimi']; ?><br>
-
-                <strong>Asunto:</strong> <?php echo $entry['asunnon_osoite']; ?><br>
-                <!-- Lisää dropdown-valikko työntekijöille -->
-                
-                <form action="php/lisaa_tyo.php" method="POST">
-                  <?php
-
-                try {
-                    // Haetaan kaikki työntekijät tietokannasta
-                    $sql = "SELECT tyontekijaID, etunimi, sukunimi FROM tyontekija WHERE rooliID IN (2, 3)";
-                    $stmt = $yhteys->query($sql);
-                    $tyontekija = $stmt->fetchAll(PDO::FETCH_ASSOC);
-                } catch (PDOException $e) {
-                    echo "Virhe haettaessa työntekijöitä: " . $e->getMessage();
-                }
-                ?>
-
-                <select name="tyontekija">
-                  <?php foreach ($tyontekija as $tyontekija) : ?>
-                    <option value="<?php echo $tyontekija['tyontekijaID']; ?>">
-                      <?php echo $tyontekija['etunimi'] . ' ' . $tyontekija['sukunimi']; ?>
-                    </option>
-                  <?php endforeach; ?>
-                </select><br><br>
-
-                  <input type="hidden" name="vikaID" value="<?php echo $entry['vikaID']; ?>">
-                  <input type="hidden" name="kohde" value="<?php echo $entry['kohde']; ?>">
-                  <input type="hidden" name="viesti" value="<?php echo $entry['viesti']; ?>">
-                  <input type="hidden" name="lemmikit" value="<?php echo $entry['lemmikit']; ?>">
-                  <input type="hidden" name="yleisavain" value="<?php echo $entry['yleisavain']; ?>">
-                  <input type="hidden" name="etunimi" value="<?php echo $entry['etunimi']; ?>">
-                  <input type="hidden" name="sukunimi" value="<?php echo $entry['sukunimi']; ?>">
-                  <input type="hidden" name="sposti" value="<?php echo $entry['sposti']; ?>">
-                  <input type="hidden" name="puhelin" value="<?php echo $entry['puhelin']; ?>">
-                  <input type="hidden" name="taloyhtio" value="<?php echo $entry['taloyhtioID']; ?>">
-                  <input type="hidden" name="asunto" value="<?php echo $entry['asuntoID']; ?>">
-                  <button name="lisaatyo" type="submit" class="btn btn-warning">Ota työn alle</button>
-                </form>
-                  </div>
-                <?php endforeach; ?>
+                <strong>Asunto:</strong> <?php echo $entry['asunto']; ?><br>
+                <strong>Kuka tekee:</strong> <?php echo $entry['t_etunimi'] . " " . $entry['t_sukunimi']; ?><br>
+                <strong>VikaID:</strong> <?php echo $entry['vikaID']; ?><br>
+            </div>
+        <?php endforeach; ?>
       </div>
 <?php else : ?>
     <p>Ei vikailmoituksia.</p>
 <?php endif; ?>
-</div>
 </form>
+</div>
 
-<a href="omat_tyot.php"><button name="omatyo" class="btn btn-danger omatyo">Omat työt</button></a>
+<p>Tämä on oikea sivu!</p>
+<a href="ilmoituslistaus.php"><button name="omatyo" class="btn btn-danger omatyo">Omat työt</button></a>
   
 
 <!-- Kirjautumismodaali -->
