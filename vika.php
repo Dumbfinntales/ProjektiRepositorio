@@ -32,6 +32,9 @@
         <a class="nav-link" href="index.php">Etusivu</a>
       </li>
       <li class="nav-item">
+        <a class="nav-link" href="referenssit.php">Referenssit</a>
+      </li>
+      <li class="nav-item">
       <!-- laitettu nyt vain tähän, mietiään keille pitää näkyä-->
         <a class="nav-link" href="tyontekijat.php">Työntekijät</a>
       </li>
