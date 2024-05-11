@@ -166,22 +166,22 @@
   </div>
 </div>
 
-<div class="container-fluid d ">
+<div class="container-fluid d">
   <div class="container">
       <div class="row justify-content-center">
         <div class="col-12 m-4">
           <h2 class="otsikko">Asiakaspalautteita</h2>
         </div>
       </div>
-      <div class="row justify-content-center">
-        <div class="col-10 col-lg-3 m-2 p-4 text-center d_palaute">
-          <p>Todella ammattitaitoinen ja ystävällinen tiimi! He rakensivat meille uuden aidan, ja lopputulos ylitti odotuksemme. Kommunikaatio oli sujuvaa ja työ tehtiin sovitussa aikataulussa. </p>
+      <div class="row justify-content-center align-items-center">
+        <div class="col-10 col-lg-3 m-2 p-4 d_palaute">
+          <p>Todella ammattitaitoinen ja ystävällinen tiimi! He rakensivat meille uuden aidan, ja lopputulos ylitti odotuksemme. Kommunikaatio oli sujuvaa ja työ tehtiin sovitussa aikataulussa.<br>- Asukas B11 </p>
         </div>
-        <div class="col-10 col-lg-3 m-2 p-4 text-center d_palaute">
+        <div class="col-10 col-lg-3 m-2 p-4 d_palaute">
           <p>Olen erittäin tyytyväinen uuden leikkipuiston rakentamiseen. Lapset rakastavat uusia leikkivälineitä, ja minä voin luottaa siihen, että puisto on rakennettu kestävästi ja turvallisesti.<br>- Asukas C2 </p>
         </div>
-        <div class="col-10 col-lg-3 m-2 p-4 text-center d_palaute">
-          <p>Pakkaspäivänä onnistuin lukitsemaan itseni ulos, mutta kiitos heidän ripeän toimintansa, avain oli pian käsissäni ja pääsin takaisin lämpimään kotiini.<br>- Asukas A 4</>
+        <div class="col-10 col-lg-3 m-2 p-4 d_palaute">
+          <p>Pakkaspäivänä onnistuin lukitsemaan itseni ulos, mutta kiitos heidän ripeän toimintansa, avain oli pian käsissäni ja pääsin takaisin lämpimään kotiini.<br>- Asukas A4</>
         </div>     
       </div>
   </div>
