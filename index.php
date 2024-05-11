@@ -84,20 +84,46 @@
   </div>
 </div>
 
-<!--Palvelut-->
-<div class="container palvelut ">
-  <div class="row">
-    <div class="col-12 col-lg-6" > 
-    	<h2 class="otsikko">Palvelut</h2>
-  		<p>Tavoitteenamme on tarjota ammattitaitoista palvelua,<br> 
-         joka kattaa kaikki kiinteistön pienistä huoltotehtävistä<br>
-         suurempiin remontteihin sekä ympäristön<br> kunnossapitoon.<br><br>
-         Voimme räätälöidä juuri teidän tarpeisiinne sopivan<br> 
-         palvelupaketin, joka pitää kiinteistönne turvallisena,<br> 
-         siistinä ja toimivana vuoden<br> jokaisena päivänä. </p>
+<!--päivystys-->
+<div class="container-fluid paivystys">
+  <div class="row justify-content-center text-center">
+    <div class="col-12 m-2 p-2">
+      <p>Kiinteistöhuoltopäivystys 24h</p>
+      <p id="numero"><i class="fas fa-phone"></i> 045 5489040</p>
     </div>
-    <div class="col">
-      <div class="row " >
+  </div>
+</div>
+
+<!--Esittely-->
+<div class="container-fluid esittely">
+ <div class="container">
+    <div class="row justify-content-center align-items-center">
+      <div class="col-12 col-lg-6 p-4">
+        <img src="img/apartment.jpg" class="esittely_img">
+      </div>
+      <div class="col-12 col-lg-6 justify-content-center">
+        <h2 class="otsikko text-center mt-4">Kiinteistöhuolto R.Autio Oy</h2>
+        <p class="p-4">Kiinteistöhuolto R-Autio Oy on paikallinen yritys, joka tarjoaa laadukasta kiinteistönhuoltopalvelua Tornion kaupungissa ja lähialueilla.<br><br>
+         Olemme erikoistuneet monipuoliseen kiinteistöjen kunnossapitoon ja huoltoon.  Asiakkaidemme tyytyväisyys ja kiinteistöjen hyvinvointi ovat meille ensisijaisen tärkeitä. Meillä on pitkäaikainen kokemus alalta, ammattitaitoinen tiimi ja nykyaikainen kalusto. Lisäksi pyrimme jatkuvasti kehittämään toimintaamme ja palveluitamme asiakkaidemme tarpeiden mukaisesti.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--Palvelut-->
+<div class="container palvelut">
+  <div class="row">
+    <div class="col-12 col-lg-6 p-2 justify-content-center align-items-center" > 
+    	<h2 class="otsikko mt-4 text-center">Palvelut</h2>
+  		<p class="p-4">Tavoitteenamme on tarjota ammattitaitoista palvelua,
+         joka kattaa kaikki kiinteistön pienistä huoltotehtävistä
+         suurempiin remontteihin sekä ympäristön kunnossapitoon.<br><br>
+         Voimme räätälöidä juuri teidän tarpeisiinne sopivan 
+         palvelupaketin, joka pitää kiinteistönne turvallisena,
+         siistinä ja toimivana vuoden jokaisena päivänä. </p>
+    </div>
+    <div class="col text-center">
+      <div class="row" >
         <div class="col m-2 shadow">
           <img src="img/tyokalut.jpg" class="palvelut_img p-2">
           <p>Huolto</p>
