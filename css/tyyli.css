@@ -127,6 +127,30 @@ label {
   color: black;
 }
 
+/*paivystys container*/
+.paivystys{
+  font-size: 25px;
+  font-weight: bold;
+  color: #0074a1;
+  margin-top:30px;
+  margin-bottom:30px;
+}
+#numero {
+  font-size: 18px;
+}
+
+/*yrityksen esittely*/
+.esittely {
+  background-color: #eeeeee;
+  font-size: 18px;
+  padding-top:50px;
+  padding-bottom:50px;
+}
+.esittely_img {
+  width: 100%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.324);
+}
+
 /*kartta*/
 #kartta {
   height: 300px;
