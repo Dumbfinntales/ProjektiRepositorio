@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 10, 2024 at 02:17 PM
+-- Generation Time: May 12, 2024 at 02:40 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -146,10 +146,8 @@ CREATE TABLE `kasittely` (
 --
 
 INSERT INTO `kasittely` (`kasittelyID`, `pvm`, `valmispvm`, `toimenpide`, `kohde`, `viesti`, `lemmikit`, `yleisavain`, `lahetetty`, `etunimi`, `sukunimi`, `sposti`, `puhelin`, `tyontekijaID`, `vikaID`, `taloyhtioID`, `asuntoID`) VALUES
-(23, '2024-05-10 08:24:55', NULL, '', 'Toistoa', 'Pitää toistaa', 0, 0, '2024-05-10 08:24:55', 'Toisto', 'Toistonen', 'lisaa.toistoi@hotmail.fi', '0500000000', 2, 95, '4', '52'),
-(24, '2024-05-10 08:31:32', NULL, '', 'Keittiö', 'Hella meni kaboom taskete!!!', 0, 0, '2024-05-10 08:31:32', 'Teppo', 'Taapero', 't.t@hotmail.com', '0500001111', 3, 96, '2', '38'),
-(25, '2024-05-10 08:31:52', NULL, '', 'Argh', 'YASAAAAAAA', 1, 1, '2024-05-10 08:31:52', 'Urpo', 'Kekkonen', 'ei.ole@sahköpostia.com', '050111112323', 5, 97, '2', '31'),
-(26, '2024-05-10 11:52:16', NULL, '', 'Viiminen testi', 'testiä', 1, 0, '2024-05-10 11:52:16', 'Viiminen', 'testi', 'testi@testi.fi', '123456789', 4, 95, '2', '31');
+(31, '2024-05-12 08:29:29', '2024-05-12 12:35:40', 'Toinen testi', 'Viiminen testi', 'testiä', 1, 0, '2024-05-12 08:29:29', 'Viiminen', 'testi', 'testi@testi.fi', '123456789', 5, 95, '2', '31'),
+(32, '2024-05-12 08:32:39', NULL, '', 'Keittiö', 'Hella meni kaboom taskete!!!', 0, 0, '2024-05-12 08:32:39', 'Teppo', 'Taapero', 't.t@hotmail.com', '0500001111', 5, 96, '2', '38');
 
 -- --------------------------------------------------------
 
@@ -315,6 +313,7 @@ CREATE TABLE `vikailmoitus` (
   `sukunimi` varchar(50) NOT NULL,
   `sposti` varchar(50) NOT NULL,
   `puhelin` varchar(50) NOT NULL,
+  `varattu` tinyint(1) NOT NULL DEFAULT 0,
   `taloyhtioID` int(11) NOT NULL,
   `asuntoID` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -323,11 +322,11 @@ CREATE TABLE `vikailmoitus` (
 -- Dumping data for table `vikailmoitus`
 --
 
-INSERT INTO `vikailmoitus` (`vikaID`, `kohde`, `viesti`, `lemmikit`, `yleisavain`, `lahetetty`, `etunimi`, `sukunimi`, `sposti`, `puhelin`, `taloyhtioID`, `asuntoID`) VALUES
-(95, 'Viiminen testi', 'testiä', 1, 0, '2024-05-03 19:03:27', 'Viiminen', 'testi', 'testi@testi.fi', '123456789', 2, 31),
-(96, 'Keittiö', 'Hella meni kaboom taskete!!!', 0, 0, '2024-05-08 07:29:53', 'Teppo', 'Taapero', 't.t@hotmail.com', '0500001111', 2, 38),
-(97, 'Argh', 'YASAAAAAAA', 1, 1, '2024-05-08 07:31:11', 'Urpo', 'Kekkonen', 'ei.ole@sahköpostia.com', '050111112323', 2, 31),
-(98, 'Toistoa', 'Pitää toistaa', 0, 0, '2024-05-09 12:31:44', 'Toisto', 'Toistonen', 'lisaa.toistoi@hotmail.fi', '0500000000', 4, 52);
+INSERT INTO `vikailmoitus` (`vikaID`, `kohde`, `viesti`, `lemmikit`, `yleisavain`, `lahetetty`, `etunimi`, `sukunimi`, `sposti`, `puhelin`, `varattu`, `taloyhtioID`, `asuntoID`) VALUES
+(95, 'Viiminen testi', 'testiä', 1, 0, '2024-05-03 19:03:27', 'Viiminen', 'testi', 'testi@testi.fi', '123456789', 1, 2, 31),
+(96, 'Keittiö', 'Hella meni kaboom taskete!!!', 0, 0, '2024-05-08 07:29:53', 'Teppo', 'Taapero', 't.t@hotmail.com', '0500001111', 1, 2, 38),
+(97, 'Argh', 'YASAAAAAAA', 1, 1, '2024-05-08 07:31:11', 'Urpo', 'Kekkonen', 'ei.ole@sahköpostia.com', '050111112323', 0, 2, 31),
+(98, 'Toistoa', 'Pitää toistaa', 0, 0, '2024-05-09 12:31:44', 'Toisto', 'Toistonen', 'lisaa.toistoi@hotmail.fi', '0500000000', 0, 4, 52);
 
 -- --------------------------------------------------------
 
@@ -475,7 +474,7 @@ ALTER TABLE `isannoitsija`
 -- AUTO_INCREMENT for table `kasittely`
 --
 ALTER TABLE `kasittely`
-  MODIFY `kasittelyID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `kasittelyID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 
 --
 -- AUTO_INCREMENT for table `kayttajat`

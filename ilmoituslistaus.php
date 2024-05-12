@@ -79,11 +79,12 @@
 include 'php/conn.php';
 
 try {
-    // Retrieve all entries from the database with related data
+    //Haetaan kaikki tarvittava tieto ja rajataan onko tehtävä varattu vai ei
     $sql = "SELECT v.*, t.nimi AS taloyhtio_nimi, a.huoneisto AS asunnon_osoite
             FROM vikailmoitus v
             JOIN taloyhtio t ON v.taloyhtioID = t.taloyhtioID
-            JOIN asunnot a ON v.asuntoID = a.asuntoID";
+            JOIN asunnot a ON v.asuntoID = a.asuntoID
+            WHERE v.varattu = '0'";
     $stmt = $yhteys->query($sql);
     $entries = $stmt->fetchAll(PDO::FETCH_ASSOC);
 } catch (PDOException $e) {
@@ -108,23 +109,14 @@ try {
         <?php foreach ($entries as $entry) : ?>
             <div class="col-md-3">
                 <strong>Kohde:</strong> <?php echo $entry['kohde']; ?><br>
-
                 <strong>Viesti:</strong> <?php echo $entry['viesti']; ?><br>
-
                 <strong>Lemmikit:</strong> <?php echo $entry['lemmikit'] ? 'Kyllä' : 'Ei'; ?><br>
-
                 <strong>Yleisavain:</strong> <?php echo $entry['yleisavain'] ? 'Kyllä' : 'Ei'; ?><br>
-
                 <strong>Etunimi:</strong> <?php echo $entry['etunimi']; ?><br>
-
                 <strong>Sukunimi:</strong> <?php echo $entry['sukunimi']; ?><br>
-
                 <strong>Sähköposti:</strong> <?php echo $entry['sposti']; ?><br>
-
                 <strong>Puhelin:</strong> <?php echo $entry['puhelin']; ?><br>
-
                 <strong>Taloyhtiö:</strong> <?php echo $entry['taloyhtio_nimi']; ?><br>
-
                 <strong>Asunto:</strong> <?php echo $entry['asunnon_osoite']; ?><br>
                 <!-- Lisää dropdown-valikko työntekijöille -->
                 
@@ -171,7 +163,7 @@ try {
 </div>
 </form>
 
-<a href="omat_tyot.php"><button name="omatyo" class="btn btn-danger omatyo">Omat työt</button></a>
+<a href="omat_tyot.php"><button name="omatyo" class="btn btn-danger omatyo">Varatut työt</button></a>
   
 
 <!-- Kirjautumismodaali -->

@@ -84,7 +84,8 @@ try {
     t.nimi AS taloyhtio_nimi, a.huoneisto AS asunto FROM kasittely k
     JOIN tyontekija ty ON k.tyontekijaID = ty.tyontekijaID
     JOIN taloyhtio t ON k.taloyhtioID = t.taloyhtioID
-    JOIN asunnot a ON k.asuntoID = a.asuntoID";
+    JOIN asunnot a ON k.asuntoID = a.asuntoID
+    WHERE k.valmispvm IS NULL";
     $stmt = $yhteys->query($sql);
     $entries = $stmt->fetchAll(PDO::FETCH_ASSOC);
 } catch (PDOException $e) {
@@ -93,15 +94,9 @@ try {
 
 ?>
 
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Vikailmoitukset</title>
-</head>
-<body>
-<h2 class="vikah2">Vikailmoitukset</h2>
+<h2 class="vikah2">Varatut työt</h2>
 <div class="container-fluid p-3">
-<form action="php/lisaa_tyo.php" method="POST">
+
 <?php if (isset($entries) && !empty($entries)) : ?>
     <div class="row">
         <?php foreach ($entries as $entry) : ?>
@@ -117,18 +112,21 @@ try {
                 <strong>Taloyhtiö:</strong> <?php echo $entry['taloyhtio_nimi']; ?><br>
                 <strong>Asunto:</strong> <?php echo $entry['asunto']; ?><br>
                 <strong>Kuka tekee:</strong> <?php echo $entry['t_etunimi'] . " " . $entry['t_sukunimi']; ?><br>
-                <strong>VikaID:</strong> <?php echo $entry['vikaID']; ?><br>
+                <strong>VikaID:</strong> <?php echo $entry['vikaID']; ?><br><br>
+                <form action="php/valmis_tyo.php" method="POST">
+                  <input type="hidden" name="vikaID" value="<?php echo $entry['vikaID']; ?>">
+                  <textarea class="form-control" name="toimenpide" placeholder="Kirjoita toimenpiteesi"></textarea><br>
+                  <button name="valmis" type="submit" class="btn btn-warning">Merkkaa tehdyksi</button>
+                </form>
             </div>
         <?php endforeach; ?>
       </div>
 <?php else : ?>
     <p>Ei vikailmoituksia.</p>
 <?php endif; ?>
-</form>
 </div>
 
-<p>Tämä on oikea sivu!</p>
-<a href="ilmoituslistaus.php"><button name="omatyo" class="btn btn-danger omatyo">Omat työt</button></a>
+<a href="ilmoituslistaus.php"><button name="omatyo" class="btn btn-danger omatyo">Takaisin</button></a>
   
 
 <!-- Kirjautumismodaali -->
