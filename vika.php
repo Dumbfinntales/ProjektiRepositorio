@@ -76,70 +76,91 @@
 </nav>
 
 
-<div class="container vika-content">
-    <h2>Huoltopyyntö</h2>
+<div class="container col-lg-6 col-md-6 col-sm-12 vika-content">
+    <h2 class="otsikko">Huoltopyyntö</h2>
 
     <!--Huoltopyyntö lomake-->
     <form action="php/uusi_vika.php" method="POST">
       <br>
-      <div class="inline-label">
-        <label for="taloyhtio">Valitse taloyhtiö:</label>
-        <select id="taloyhtio" name="taloyhtio" onchange="haeAsunnot(this.value)">
-            <option value="">Valitse taloyhtiö</option>
-            <?php
-            // Haetaan taloyhtiöt tietokannasta ja lisätään ne dropdown-valikkoon
-            include 'php/conn.php'; // Sisällytetään tietokantayhteys
-            
-            $sql = "SELECT taloyhtioID, nimi, osoite FROM taloyhtio";
-            $result = $yhteys->query($sql);
-            
-            if ($result->rowCount() > 0) {
-                while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
-                    echo "<option value='{$row['taloyhtioID']}'>{$row['nimi']}, {$row['osoite']}</option>";
+      <div class="form-group">
+        <div class="row">
+          <div class="col">
+            <label for="taloyhtio">Valitse taloyhtiö:</label>
+            <select class="custom-select" id="taloyhtio" name="taloyhtio" onchange="haeAsunnot(this.value)">
+                <option value="">Valitse taloyhtiö</option>
+                <?php
+                // Haetaan taloyhtiöt tietokannasta ja lisätään ne dropdown-valikkoon
+                include 'php/conn.php'; // Sisällytetään tietokantayhteys
+                
+                $sql = "SELECT taloyhtioID, nimi, osoite FROM taloyhtio";
+                $result = $yhteys->query($sql);
+                
+                if ($result->rowCount() > 0) {
+                    while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
+                        echo "<option value='{$row['taloyhtioID']}'>{$row['nimi']}, {$row['osoite']}</option>";
+                    }
                 }
-            }
-            ?>
-        </select>
+                ?>
+            </select>
+          </div>
+
+          <div class="col">
+            <label for="asunto">Valitse asunto:</label>
+            <select class="custom-select" id="asunto" name="asunto">
+                <option value="">Valitse asunto</option>
+            </select>
+          </div>
+        </div>
       </div>
 
-      <div class="inline-label">
-        <label for="asunto">Valitse asunto:</label>
-        <select id="asunto"  name="asunto">
-            <option value="">Valitse asunto</option>
-        </select>
-      </div><br><br>
-
+      <div class="form-group">
         <label for="kohde">Kohde:</label>
-        <input type="text" id="kohde" name="kohde" required><br><br>
-
+        <input type="text" id="kohde" name="kohde" class="form-control" required>
+      </div>
+      <div class="form-group">
         <label for="viesti">Viesti:</label>
-        <textarea id="viesti" class="form-control" name="viesti" required placeholder="Kuvaile huollon kohde ja tarve mahdollisimman tarkasti."></textarea><br><br>
-
-        <div class="inline-label">
-          <label for="lemmikit">Huoneistossa lemmikkejä <input type="checkbox" id="lemmikit" name="lemmikit" value="1"></label><br>
+        <textarea id="viesti" class="form-control" name="viesti" rows="5" required placeholder="Kuvaile huollon kohde ja tarve mahdollisimman tarkasti."></textarea>
+      </div>
+      <div class="form-group">
+        <div class="row">
+          <div class="col">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="lemmikit" name="lemmikit" value="1">
+              <label class="form-check-label" for="lemmikit">Huoneistossa lemmikkejä</label>
+            </div>
+          </div>
+          <div class="col">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="yleisavain" name="yleisavain" value="1">
+              <label class="form-check-label" for="yleisavain">Saa käyttää yleisavainta</label>
+            </div>
+          </div>
         </div>
+      </div>
 
-        <div class="inline-label">
-          <label for="yleisavain">Saa käyttää yleisavainta <input type="checkbox" id="yleisavain" name="yleisavain" value="1"></label><br>
-        </div>
-
+      <div class="form-group">
         <label for="etunimi">Etunimi:</label>
-        <input type="text" id="etunimi" name="etunimi" required><br><br>
-
+        <input type="text" id="etunimi" name="etunimi" class="form-control" required>
+      </div>
+      <div class="form-group">
         <label for="sukunimi">Sukunimi:</label>
-        <input type="text" id="sukunimi" name="sukunimi" required><br><br>
-        
-        <div class="inline-label">
-          <label for="sposti">Sähköposti:</label>
-          <input type="email" id="sposti" name="sposti" required><br><br>
-        </div>
+        <input type="text" id="sukunimi" name="sukunimi" class="form-control" required>
+      </div>
+      <div class="form-group">
+        <div class="row"> 
+          <div class="col">
+            <label for="sposti">Sähköposti:</label>
+            <input type="email" id="sposti" name="sposti" class="form-control" required>
+          </div>
 
-        <div class="inline-label">
-          <label for="puhelin">Puhelin:</label>
-          <input type="tel" id="puhelin" name="puhelin" required><br><br>
+          <div class="col">
+            <label for="puhelin">Puhelin:</label>
+            <input type="tel" id="puhelin" name="puhelin" class="form-control" required>
+          </div>
         </div>
+      </div>
         
-        <button name="laheta" type="submit" class="btn btn-warning">Lähetä</button>
+      <button name="laheta" type="submit" class="btn btn-warning">Lähetä</button>
     </form>
 </div>
 
