@@ -74,22 +74,32 @@
 </nav>
 
 <div class="container col-lg-6 col-md-6 col-sm-12 content">
-    <h3>Yhteydenotto</h3>
-    <form action="php/yhteydenotto.php" method="POST">
+    <h2 class="otsikko mb-4">Yhteydenotto</h2>
+
+    <form action="php/yhteydenotto2.php" method="POST">
         <div class="form-group">
-            <input type="text" class="form-control" placeholder="Etunimi" name="etunimi">
+            <label for="etunimi">Etunimi:</label>
+            <input type="text" class="form-control"  name="etunimi" required>
         </div>
         <div class="form-group">
-            <input type="text" class="form-control" placeholder="Sukunimi" name="sukunimi">
+          <label for="sukunimi">Sukunimi:</label>
+            <input type="text" class="form-control"  name="sukunimi" required>
         </div>
         <div class="form-group">
-          <input type="text" class="form-control" placeholder="Sähköposti" name="sposti">
+          <div class="row">
+            <div class="col">
+              <label for="sposti">Sähköposti:</label>
+              <input type="text" class="form-control" name="sposti" required>
+            </div>
+            <div class="col">
+                <label for="puhelin">Puhelin:</label>
+                <input type="text" class="form-control" name="puhelin">
+            </div>
+          </div>
         </div>
         <div class="form-group">
-            <input type="text" class="form-control" placeholder="Puhelinnumero" name="puhelin">
-        </div>
-        <div class="form-group">
-          <textarea class="form-control" placeholder="Viesti" name="viesti"></textarea><br>
+          <label for="viesti">Viesti:</label>
+          <textarea class="form-control" rows="5" name="viesti" required></textarea><br>
         </div>
         <p>Haluan että minuun otetaan yhteyttä:</p>
         <div class="form-check">
