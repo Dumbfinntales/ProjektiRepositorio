@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>R.Autio Oy</title>
+  <title>Työntekijät R.Autio Oy</title>
   <meta charset="utf-8">
   <meta name="author" content="Roope, Miika, Riina ja Nico">
   <meta name="keywords" content="website, school project">
@@ -80,11 +80,10 @@
   
   <div class="container pt-4 pb-4" >
           <!-- Kortit toimisto -->
-    <div class="row justify-content-center p-4"><h3>Toimisto</h3></div>
+    <div class="row justify-content-center p-4"><h2 class="otsikko">Toimisto</h2></div>
           <div class="row justify-content-center m-4 pb-4">
             <?php foreach($data_toimisto as $toimisto): ?>
                 <div class="card text-center m-2">
-                  <!-- kuvan kokoa en saanu lisättyä tyyli.css -->
                   <img src="<?php echo $toimisto->kuvapolku; ?>" class="card-img-top mx-auto mt-4 profile_img" alt="Kuva">
                     <div class="card-body">
                         <h6 class="text-uppercase nimi"><?php echo $toimisto->etunimi. " " . $toimisto->sukunimi; ?></h5>
@@ -93,10 +92,10 @@
                     </div>
                 </div>
             <?php endforeach; ?>
-      </div>
+        </div>
       
             <!-- Kortit työnjohtajille -->
-    <div class="row justify-content-center p-4"><h3>Työnjohtajat</h3></div>    
+    <div class="row justify-content-center p-4"><h2 class="otsikko">Työnjohto</h2></div>    
       <div class="row justify-content-center m-4 pb-4">
           <?php foreach($data_tyonjohto as $tyonjohto): ?>
               <div class="card text-center m-2">
@@ -111,7 +110,7 @@
       </div>
 
               <!-- Kortit työntekijöille -->
-      <div class="row justify-content-center p-4"><h3>Työntekijät</h3></div> 
+      <div class="row justify-content-center p-4"><h2 class="otsikko">Kiinteistöjen huolto</h2></div> 
         <div class="row justify-content-center m-4 pb-4">
             <?php foreach($data_tyontekija as $tyontekija): ?>
                 <div class="card text-center m-2">
