@@ -3,11 +3,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>R.Autio Oy</title>
+  <title>Referenssit - R.Autio Oy</title>
   <meta charset="utf-8">
-  <meta name="author" content="Roope, Miika, Riina ja Nico">
-  <meta name="keywords" content="website, school project">
-  <meta name="description" content=" ">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
   <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
@@ -222,11 +219,11 @@
       <form>
         <div class="form-group">
           <label for="kayttajatunnus">Käyttäjätunnus:</label>
-          <input type="text" id="kayttajatunnus" name="kayttajatunnus">
+          <input class="login_input" type="text" id="kayttajatunnus" name="kayttajatunnus">
         </div>
         <div class="form-group">
           <label for="salasana">Salasana:</label>
-          <input type="password" id="salasana" name="salasana">
+          <input class="login_input" type="password" id="salasana" name="salasana">
         </div>
         <button type="submit">Kirjaudu</button>
         <div class="error"></div>
@@ -237,6 +234,5 @@
 
 <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
 <script src="modal.js"></script>
-<script src="kartta.js"></script>
 </body>
 </html>
