@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>R.Autio Oy</title>
+  <title>Huoltopyyntö R.Autio Oy</title>
   <meta charset="utf-8">
   <meta name="author" content=" ">
   <meta name="keywords" content=" ">
@@ -86,7 +86,7 @@
         <div class="row">
           <div class="col">
             <label for="taloyhtio">Valitse taloyhtiö:</label>
-            <select class="custom-select" id="taloyhtio" name="taloyhtio" onchange="haeAsunnot(this.value)">
+            <select class="custom-select" id="taloyhtio" name="taloyhtio" onchange="haeAsunnot(this.value)" required>
                 <option value="">Valitse taloyhtiö</option>
                 <?php
                 // Haetaan taloyhtiöt tietokannasta ja lisätään ne dropdown-valikkoon
@@ -106,7 +106,7 @@
 
           <div class="col">
             <label for="asunto">Valitse asunto:</label>
-            <select class="custom-select" id="asunto" name="asunto">
+            <select class="custom-select" id="asunto" name="asunto" required>
                 <option value="">Valitse asunto</option>
             </select>
           </div>
