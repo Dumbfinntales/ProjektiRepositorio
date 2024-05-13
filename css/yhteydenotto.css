@@ -53,8 +53,8 @@ body{
     text-align: center;
     color: black;
   }
-  input[type="text"],
-input[type="password"] {
+.login_input[type="text"],
+.login_input[type="password"] {
   width: calc(100% - 20px); 
   padding: 10px; 
   border: 1px solid #ccc; 
