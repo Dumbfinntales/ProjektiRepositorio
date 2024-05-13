@@ -16,6 +16,7 @@
   <script src="vika.js"></script>
   <link rel="stylesheet" href="css/tyyli.css">
   <link rel="icon" href="img/tablogo.png">
+   <title>Vikailmoitukset</title>
 </head>
 <body>
 
@@ -95,12 +96,6 @@ try {
 
 ?>
 
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Vikailmoitukset</title>
-</head>
-<body>
 <div class="container-fluid">
   <!-- Luo raportti button -->
   <form action="generate_pdf.php" method="POST" target="_blank" class="float-right mt-2">
