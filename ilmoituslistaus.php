@@ -52,8 +52,6 @@
   </li>';
   }
 ?>
-<?php require_once('tcpdf/tcpdf.php');
-?>
 
     </ul>
     <ul class="navbar-nav">
@@ -74,6 +72,8 @@
     </ul>
   </div>
 </nav>
+
+<div class="container-fluid contents">
 <?php
 
 include 'php/conn.php';
@@ -93,12 +93,6 @@ try {
 
 ?>
 
-<div class="container-fluid">
-  <!-- Luo raportti button -->
-  <form action="generate_pdf.php" method="POST" target="_blank" class="float-right mt-2">
-    <button type="submit" class="btn btn-primary">Luo raportti</button>
-  </form>
-</div>
 <form action="php/lisaa_tyo.php" method="POST">
 <h2 class="vikah2">Vikailmoitukset</h2>
 <!---<iframe id="pdfPreview" src="" style="width: 100%; height: 600px;"></iframe>------>
@@ -162,8 +156,14 @@ try {
 </div>
 </form>
 
+<!--Nappi varattujen töitten tarkasteluun-->
 <a href="omat_tyot.php"><button name="omatyo" class="btn btn-danger omatyo">Varatut työt</button></a>
-  
+
+<!-- Luo raportti button -->
+<form action="generate_pdf.php" method="POST" target="_blank" class="float-right mt-2">
+  <button type="submit" class="btn btn-primary">Luo raportti</button>
+</form>
+</div>
 
 <!-- Kirjautumismodaali -->
   <div id="login-form" class="modal">

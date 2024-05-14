@@ -70,6 +70,8 @@
     </ul>
   </div>
 </nav>
+
+<div class="container-fluid contents">
 <?php
 
 include 'php/conn.php';
@@ -123,6 +125,7 @@ try {
 </div>
 
 <a href="ilmoituslistaus.php"><button name="omatyo" class="btn btn-danger omatyo">Takaisin</button></a>
+</div>
   
 
 <!-- Kirjautumismodaali -->

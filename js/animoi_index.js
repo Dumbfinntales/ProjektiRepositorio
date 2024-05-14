@@ -51,3 +51,18 @@ $(document).ready(function(){
         $(".anim6").css('box-shadow', '0 0 10px rgba(0, 0, 0, 0.340)');
     });
   });
+
+// Animoidaan nyt kuvan vaihto
+var painettu = true;
+$(document).ready(function(){
+  $('.esittely_img').on({'click': function(){
+          if(painettu === true){
+            $('.esittely_img').attr('src','img/tyamias.jpg');
+          }
+          else{
+            $('.esittely_img').attr('src','img/apartment.jpg');
+          }
+          painettu = !painettu;
+       }
+   });
+  });
