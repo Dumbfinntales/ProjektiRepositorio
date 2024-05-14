@@ -92,6 +92,9 @@ try {
 }
 
 ?>
+<?php // Include the TCPDF library
+require_once('tcpdf/tcpdf.php');
+?>
 
 <form action="php/lisaa_tyo.php" method="POST">
 <h2 class="vikah2 otsikko">Vikailmoitukset</h2>
