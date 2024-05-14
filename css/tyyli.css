@@ -180,6 +180,15 @@ label {
 }
 
 /*palvelut*/
+.col {
+  position: relative;
+  display: inline-block;
+  margin: 10px;
+  transition: transform 0.3s ease;
+}
+.col:hover {
+  transform: scale(1.1);
+}
 .palvelut {
   font-size: 18px;
   text-align: center;
