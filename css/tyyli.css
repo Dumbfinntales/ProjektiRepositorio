@@ -180,13 +180,13 @@ label {
 }
 
 /*palvelut*/
-.col {
+.coll {
   position: relative;
   display: inline-block;
   margin: 10px;
   transition: transform 0.3s ease;
 }
-.col:hover {
+.coll:hover {
   transform: scale(1.1);
 }
 .palvelut {

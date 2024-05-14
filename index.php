@@ -121,29 +121,29 @@
          palvelupaketin, joka pitää kiinteistönne turvallisena,
          siistinä ja toimivana vuoden jokaisena päivänä. </p>
     </div>
-    <div class="col text-center">
+    <div class="col text-center coll">
       <div class="row" >
-        <div class="col m-2 shadow">
+        <div class="col m-2 shadow coll">
           <img src="img/tyokalut.jpg" class="palvelut_img p-2">
           <p>Huolto</p>
         </div>
-        <div class="col m-2 shadow">
+        <div class="col m-2 shadow coll">
           <img src="img/siivous.jpg" class="palvelut_img p-2">
           <p>Puhtaus</p>   
         </div>
-        <div class="col m-2 shadow">
+        <div class="col m-2 shadow coll">
           <img src="img/lumi.jpg" class="palvelut_img p-2">
           <p>Lumityöt</p>         
         </div>
-        <div class="col m-2 shadow">
+        <div class="col m-2 shadow coll">
           <img src="img/roskis.jpg" class="palvelut_img p-2">
           <p>Jätehuolto</p> 
         </div>
-        <div class="col m-2 shadow">
+        <div class="col m-2 shadow coll">
           <img src="img/piha.jpg" class="palvelut_img p-2">
           <p>Pihatyöt</p>    
         </div>
-        <div class="col m-2 shadow">
+        <div class="col m-2 shadow coll">
           <img src="img/avain.jpg" class="palvelut_img p-2" >
           <p>24h Päivystys</p> 
         </div>
