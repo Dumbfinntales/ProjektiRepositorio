@@ -35,8 +35,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 if (xhr.status === 200) {
                     const response = JSON.parse(xhr.responseText);
                     if (response.success) {
-                        // Redirect to dashboard or some other page
-                        window.location.href = 'index.php';
+                        // Päivitä sivu jos kirjautuminen onnistui
+                        window.location.reload();
                     } else {
                         error.textContent = response.message;
                     }

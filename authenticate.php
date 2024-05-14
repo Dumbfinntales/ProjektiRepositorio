@@ -40,7 +40,7 @@ if ($result->num_rows > 0) {
     // Prepare JSON response
     $response = array(
         "success" => true,
-        "message" => "Authentication successful",
+        "message" => "Kirjautuminen onnistui",
         "kayttajaID" => $kayttajaID,
         "rooliID" => $rooliID,
         "rooli" => $rooli
@@ -49,7 +49,7 @@ if ($result->num_rows > 0) {
     // Authentication failed
     $response = array(
         "success" => false,
-        "message" => "Virheellinen kayttajatunnus tai salasana"
+        "message" => "Virheellinen käyttäjätunnus tai salasana"
     );
 }
 
