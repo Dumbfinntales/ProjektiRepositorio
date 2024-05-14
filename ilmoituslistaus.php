@@ -9,8 +9,8 @@
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://kit.fontawesome.com/293af4024f.js" crossorigin="anonymous"></script>
-  <script src="modal.js"></script>
-  <script src="vika.js"></script>
+  <script src="js/modal.js"></script>
+  <script src="js/vika.js"></script>
   <link rel="stylesheet" href="css/tyyli.css">
   <link rel="icon" href="img/tablogo.png">
    <title>Vikailmoitukset</title>

@@ -233,6 +233,6 @@
 </div>
 
 <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
-<script src="modal.js"></script>
+<script src="js/modal.js"></script>
 </body>
 </html>

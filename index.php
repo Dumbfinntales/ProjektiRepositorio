@@ -10,6 +10,10 @@
   <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!--Skripti jquerylle-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  
   <script src="https://kit.fontawesome.com/293af4024f.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
   integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
@@ -123,27 +127,27 @@
     </div>
     <div class="col text-center coll">
       <div class="row" >
-        <div class="col m-2 shadow coll">
+        <div class="col m-2 palvelut_div anim1 coll">
           <img src="img/tyokalut.jpg" class="palvelut_img p-2">
           <p>Huolto</p>
         </div>
-        <div class="col m-2 shadow coll">
+        <div class="col m-2 palvelut_div anim2 coll">
           <img src="img/siivous.jpg" class="palvelut_img p-2">
           <p>Puhtaus</p>   
         </div>
-        <div class="col m-2 shadow coll">
+        <div class="col m-2 palvelut_div anim3 coll">
           <img src="img/lumi.jpg" class="palvelut_img p-2">
           <p>Lumityöt</p>         
         </div>
-        <div class="col m-2 shadow coll">
+        <div class="col m-2 palvelut_div anim4 coll">
           <img src="img/roskis.jpg" class="palvelut_img p-2">
           <p>Jätehuolto</p> 
         </div>
-        <div class="col m-2 shadow coll">
+        <div class="col m-2 palvelut_div anim5 coll">
           <img src="img/piha.jpg" class="palvelut_img p-2">
           <p>Pihatyöt</p>    
         </div>
-        <div class="col m-2 shadow coll">
+        <div class="col m-2 palvelut_div anim6 coll">
           <img src="img/avain.jpg" class="palvelut_img p-2" >
           <p>24h Päivystys</p> 
         </div>
@@ -206,7 +210,8 @@
 </div>
 
 <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
-<script src="modal.js"></script>
-<script src="kartta.js"></script>
+<script src="js/modal.js"></script>
+<script src="js/kartta.js"></script>
+<script src="js/animoi_index.js"></script>
 </body>
 </html>
