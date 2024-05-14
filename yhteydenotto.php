@@ -73,6 +73,16 @@
 <div class="container col-lg-6 col-md-6 col-sm-12 content">
     <h2 class="otsikko mb-4">Yhteydenotto</h2>
 
+    <?php
+    // Tarkistetaan onko lomake lähetetty ja näytetään ilmoitus
+    if(isset($_SESSION['form_lahetetty']) && $_SESSION['form_lahetetty'] == true) {
+        echo '<div class="alert alert-success" role="alert">
+            Yhteydenotto on lähetetty onnistuneesti!
+            </div>';
+        unset($_SESSION['form_lahetetty']);
+    }
+    ?>
+
     <form action="php/yhteydenotto2.php" method="POST">
         <div class="form-group">
             <label for="etunimi">Etunimi:</label>

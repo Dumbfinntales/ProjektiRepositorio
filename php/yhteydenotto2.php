@@ -12,15 +12,22 @@ if(isset($_POST['laheta'])){
 
     $komento="INSERT INTO yhteydenotto(etunimi, sukunimi, sposti, puhelin, viesti, yhteydenottotapa) VALUES (:etunimi, :sukunimi, :sposti, :puhelin, :viesti, :yhteydenottotapa)";
 
-            $yht = $yhteys->prepare($komento);
-            $yht->bindValue(':etunimi', $etunimi, PDO::PARAM_STR);
-            $yht->bindValue(':sukunimi', $sukunimi, PDO::PARAM_STR);
-            $yht->bindValue(':sposti', $sposti, PDO::PARAM_STR);
-            $yht->bindValue(':puhelin', $puhelin, PDO::PARAM_STR);
-            $yht->bindValue(':viesti', $viesti, PDO::PARAM_STR);
-            $yht->bindValue(':yhteydenottotapa', $yhteydenottotapa, PDO::PARAM_STR);
-            $yht->execute();
+    $yht = $yhteys->prepare($komento);
+    $yht->bindValue(':etunimi', $etunimi, PDO::PARAM_STR);
+    $yht->bindValue(':sukunimi', $sukunimi, PDO::PARAM_STR);
+    $yht->bindValue(':sposti', $sposti, PDO::PARAM_STR);
+    $yht->bindValue(':puhelin', $puhelin, PDO::PARAM_STR);
+    $yht->bindValue(':viesti', $viesti, PDO::PARAM_STR);
+    $yht->bindValue(':yhteydenottotapa', $yhteydenottotapa, PDO::PARAM_STR);
+    $yht->execute();
 
+    // Session-muuttuja asetettu ilmoittamaan lomakkeen onnistuneesta lähettämisestä
+    session_start();
+    $_SESSION['form_lahetetty'] = true;
+
+    // Ohjataan takaisin yhteydenotto.php-sivulle
+    header("Location: ../yhteydenotto.php");
+    exit();
 }
-header("location:../index.php");
 ?>
+

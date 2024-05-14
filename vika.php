@@ -75,6 +75,16 @@
 <div class="container col-lg-6 col-md-6 col-sm-12 vika-content">
     <h2 class="otsikko">Huoltopyyntö</h2>
 
+    <?php
+    // Tarkistetaan onko lomake lähetetty ja näytetään ilmoitus
+    if(isset($_SESSION['form_lahetetty']) && $_SESSION['form_lahetetty'] == true) {
+        echo '<div class="alert alert-success" role="alert">
+                Huoltopyyntö on lähetetty onnistuneesti!
+              </div>';
+        unset($_SESSION['form_lahetetty']);
+    }
+    ?>
+
     <!--Huoltopyyntö lomake-->
     <form action="php/uusi_vika.php" method="POST">
       <br>

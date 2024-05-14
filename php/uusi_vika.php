@@ -24,11 +24,20 @@ if (isset($_POST['laheta'])) {
         // Suoritetaan SQL-lauseke ja lisätään tiedot tietokantaan
         $stmt->execute([$kohde, $viesti, $lemmikit, $yleisavain, $etunimi, $sukunimi, $sposti, $puhelin, $taloyhtioID, $asuntoID]);
 
-        header("Location: ../index.php");
-        exit;
+        // Asetetaan muuttuja ilmoittamaan lomakkeen onnistuneesta lähettämisestä
+        session_start();
+        $_SESSION['form_lahetetty'] = true;
+
+         header("Location: ../vika.php");
+        exit();
     } catch (PDOException $e) {
-    
-        echo "Virhe tallennettaessa vikailmoitusta: " . $e->getMessage();
+        // Jos tietokantaoperaatio aiheuttaa virheen, se tallennetaan virheilmoitukseen
+        session_start();
+        $_SESSION['virhe'] = "Virhe tallennettaessa vikailmoitusta:" . $e->getMessage();
+
+        header("Location: ../vika.php");
+        exit;
     }
 } 
 ?>
+
