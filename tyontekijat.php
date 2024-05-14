@@ -74,53 +74,61 @@
     </ul>
   </div>
 </nav>
+
+<!--Hiano logo sivulle-->
+<div class="upper-jumbo">
+  <div class="container logo">
+  <a href="index.php"><img src="img/rautiologo.png"></a>
+  <p>R. Autio Oy, parasta palvelua Suomessa!</p>
+  </div>
+</div>
   
-  <div class="container pt-4 pb-4" >
-          <!-- Kortit toimisto -->
-    <div class="row justify-content-center p-4"><h2 class="otsikko">Toimisto</h2></div>
-          <div class="row justify-content-center m-4 pb-4">
-            <?php foreach($data_toimisto as $toimisto): ?>
-                <div class="card text-center m-2">
-                  <img src="<?php echo $toimisto->kuvapolku; ?>" class="card-img-top mx-auto mt-4 profile_img" alt="Kuva">
-                    <div class="card-body">
-                        <h6 class="text-uppercase nimi"><?php echo $toimisto->etunimi. " " . $toimisto->sukunimi; ?></h5>
-                        <p><i class="fa-solid fa-phone iconi"></i> <?php echo $toimisto->puhelin; ?></p>
-                        <p><i class="fa-solid fa-envelope iconi"></i> <?php echo $toimisto->sposti; ?></p>                 
-                    </div>
-                </div>
-            <?php endforeach; ?>
-        </div>
-      
-            <!-- Kortit työnjohtajille -->
-    <div class="row justify-content-center p-4"><h2 class="otsikko">Työnjohto</h2></div>    
-      <div class="row justify-content-center m-4 pb-4">
-          <?php foreach($data_tyonjohto as $tyonjohto): ?>
+<div class="container pt-4 pb-4" >
+        <!-- Kortit toimisto -->
+  <div class="row justify-content-center p-2"><h2 class="otsikko">Toimisto</h2></div>
+        <div class="row tyontekija_content justify-content-center m-4 pb-4">
+          <?php foreach($data_toimisto as $toimisto): ?>
               <div class="card text-center m-2">
-                <img src="<?php echo $tyonjohto->kuvapolku; ?>" class="card-img-top mx-auto mt-4 profile_img" alt="Kuva">
+                <img src="<?php echo $toimisto->kuvapolku; ?>" class="card-img-top mx-auto mt-4 profile_img" alt="Kuva">
                   <div class="card-body">
-                      <h6 class="text-uppercase nimi"><?php echo $tyonjohto->etunimi . " " . $tyonjohto->sukunimi; ?></h5>
-                      <p><i class="fa-solid fa-phone iconi"></i> <?php echo $tyonjohto->puhelin; ?></p>
-                      <p><i class="fa-solid fa-envelope iconi"></i> <?php echo $tyonjohto->sposti; ?></p>                 
-                  </div>  
+                      <h6 class="text-uppercase nimi"><?php echo $toimisto->etunimi. " " . $toimisto->sukunimi; ?></h5>
+                      <p><i class="fa-solid fa-phone iconi"></i> <?php echo $toimisto->puhelin; ?></p>
+                      <p><i class="fa-solid fa-envelope iconi"></i> <?php echo $toimisto->sposti; ?></p>                 
+                  </div>
               </div>
           <?php endforeach; ?>
       </div>
+    
+  <!-- Kortit työnjohtajille -->
+  <div class="row justify-content-center p-2"><h2 class="otsikko">Työnjohto</h2></div>    
+    <div class="row tyontekija_content justify-content-center m-4 pb-4">
+        <?php foreach($data_tyonjohto as $tyonjohto): ?>
+            <div class="card text-center m-2">
+              <img src="<?php echo $tyonjohto->kuvapolku; ?>" class="card-img-top mx-auto mt-4 profile_img" alt="Kuva">
+                <div class="card-body">
+                    <h6 class="text-uppercase nimi"><?php echo $tyonjohto->etunimi . " " . $tyonjohto->sukunimi; ?></h5>
+                    <p><i class="fa-solid fa-phone iconi"></i> <?php echo $tyonjohto->puhelin; ?></p>
+                    <p><i class="fa-solid fa-envelope iconi"></i> <?php echo $tyonjohto->sposti; ?></p>                 
+                </div>  
+            </div>
+        <?php endforeach; ?>
+    </div>
 
-              <!-- Kortit työntekijöille -->
-      <div class="row justify-content-center p-4"><h2 class="otsikko">Kiinteistöjen huolto</h2></div> 
-        <div class="row justify-content-center m-4 pb-4">
-            <?php foreach($data_tyontekija as $tyontekija): ?>
-                <div class="card text-center m-2">
-                  <img src="<?php echo $tyontekija->kuvapolku; ?>" class="card-img-top mx-auto mt-4 profile_img" alt="Kuva">
-                    <div class="card-body">
-                        <h6 class="text-uppercase nimi"><?php echo $tyontekija->etunimi . " " . $tyontekija->sukunimi; ?></h5>
-                        <p><i class="fa-solid fa-phone iconi"></i> <?php echo $tyontekija->puhelin; ?></p>
-                        <p><i class="fa-solid fa-envelope iconi"></i> <?php echo $tyontekija->sposti; ?></p>                 
-                    </div>
-                </div>
-            <?php endforeach; ?>
-        </div>  
-  </div>      
+    <!-- Kortit työntekijöille -->
+    <div class="row justify-content-center p-2"><h2 class="otsikko">Kiinteistöjen huolto</h2></div> 
+      <div class="row tyontekija_content justify-content-center m-4 pb-4">
+          <?php foreach($data_tyontekija as $tyontekija): ?>
+              <div class="card text-center m-2">
+                <img src="<?php echo $tyontekija->kuvapolku; ?>" class="card-img-top mx-auto mt-4 profile_img" alt="Kuva">
+                  <div class="card-body">
+                      <h6 class="text-uppercase nimi"><?php echo $tyontekija->etunimi . " " . $tyontekija->sukunimi; ?></h5>
+                      <p><i class="fa-solid fa-phone iconi"></i> <?php echo $tyontekija->puhelin; ?></p>
+                      <p><i class="fa-solid fa-envelope iconi"></i> <?php echo $tyontekija->sposti; ?></p>                 
+                  </div>
+              </div>
+          <?php endforeach; ?>
+      </div>  
+</div>      
 
 <!-- Footer -->
 <footer class="jumbotron footer col-sm-12">

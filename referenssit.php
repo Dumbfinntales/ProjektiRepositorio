@@ -75,10 +75,18 @@
   </div>
 </nav>
 
+<!--Hiano logo sivulle-->
+<div class="upper-jumbo">
+  <div class="container logo">
+  <a href="index.php"><img src="img/rautiologo.png"></a>
+  <p>R. Autio Oy, parasta palvelua Suomessa!</p>
+  </div>
+</div>
+
 <div class="container a">
   <div class="row">
     <div class="col-md-4 mb-4">
-      <h1 class="otsikko">Referenssit</h1>
+      <h1 class="a_otsikko">Referenssit</h1>
     </div>
     <div class="col-md-8 a_teksti" >
         <p>Vuosien varrella meille on kertynyt lukuisia tyytyväisiä asiakkaita.
@@ -120,7 +128,7 @@
 <div class="container c">
   <div class="row">
     <div class="col-12 mt-4">
-      <h2 class="otsikko">Projekteja</h2>
+      <h2 class="c_otsikko">Projekteja</h2>
     </div>
   </div>
   <div class="row justify-content-center">

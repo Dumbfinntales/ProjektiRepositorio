@@ -94,9 +94,9 @@ try {
 ?>
 
 <form action="php/lisaa_tyo.php" method="POST">
-<h2 class="vikah2">Vikailmoitukset</h2>
+<h2 class="vikah2 otsikko">Vikailmoitukset</h2>
 <!---<iframe id="pdfPreview" src="" style="width: 100%; height: 600px;"></iframe>------>
-<div class="container-fluid p-3">
+<div class="container-fluid p-3 virhe_contents">
 <?php if (isset($entries) && !empty($entries)) : ?>
     <div class="row">
         <?php foreach ($entries as $entry) : ?>

@@ -29,6 +29,20 @@ body{
   padding-top: 40px;
 }
 
+.virhe_contents{
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.340);
+  padding: 20px;
+}
+
+.omatyo{
+  margin-top: 10px;
+}
+
+.tyontekija_content{
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.340);
+  padding: 20px;
+}
+
 .vika-content{
   padding: 20px;
 }
@@ -214,11 +228,20 @@ label {
 /*referenssit*/
 .a {
   margin-top: 80px;
-  margin-bottom:60px;
+  margin-bottom: 60px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.340);
 }
+
+.a_otsikko{
+  padding: 20px;
+  color: #0074a1;
+  font-weight: bold;
+}
+
 .a_teksti {
   font-size: 18px;
-  text-align: right;
+  text-align: left;
+  padding: 20px;
 }
 .b {
   margin-bottom:60px;
@@ -232,8 +255,16 @@ label {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.324);
 }
 .c {
-  margin-bottom:60px; 
+  margin-bottom:60px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.340);
 }
+
+.c_otsikko{
+  padding: 20px;
+  color: #0074a1;
+  font-weight: bold;
+}
+
 .c_img {
  width:100%;
  height: auto;
@@ -246,7 +277,6 @@ label {
   background-color: white;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.324);
 }
-
 
 .vikah2{
   text-align: center;

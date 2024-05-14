@@ -92,8 +92,8 @@ try {
 
 ?>
 
-<h2 class="vikah2">Varatut työt</h2>
-<div class="container-fluid p-3">
+<h2 class="vikah2 otsikko">Varatut työt</h2>
+<div class="container-fluid p-3 virhe_contents">
 
 <?php if (isset($entries) && !empty($entries)) : ?>
     <div class="row">
