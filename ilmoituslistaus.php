@@ -118,7 +118,8 @@ try {
 
                 try {
                     // Haetaan kaikki työntekijät tietokannasta
-                    $sql = "SELECT tyontekijaID, etunimi, sukunimi FROM tyontekija WHERE rooliID IN (2, 3)";
+                    $sql = "SELECT tyontekijaID, etunimi, sukunimi FROM tyontekija WHERE rooliID IN (2, 3)
+                            AND status = '0'";
                     $stmt = $yhteys->query($sql);
                     $tyontekija = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 } catch (PDOException $e) {
