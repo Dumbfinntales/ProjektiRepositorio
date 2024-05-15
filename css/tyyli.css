@@ -36,6 +36,18 @@ body{
 
 .omatyo{
   margin-top: 10px;
+  background-color: #0074a1;
+  text-shadow: 1px 1px 1px black;
+  color: #fff; 
+  border: none; 
+  border-radius: 5px; 
+  cursor: pointer;
+  padding: 10px;
+}
+
+.omatyo:hover{
+  background-color: lightskyblue;
+  color: white;
 }
 
 .tyontekija_content{

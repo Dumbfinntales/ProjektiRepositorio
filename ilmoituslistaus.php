@@ -149,7 +149,7 @@ require_once('tcpdf/tcpdf.php');
                   <input type="hidden" name="puhelin" value="<?php echo $entry['puhelin']; ?>">
                   <input type="hidden" name="taloyhtio" value="<?php echo $entry['taloyhtioID']; ?>">
                   <input type="hidden" name="asunto" value="<?php echo $entry['asuntoID']; ?>">
-                  <button name="lisaatyo" type="submit" class="btn btn-warning">Ota työn alle</button>
+                  <button name="lisaatyo" type="submit" class="btn btn-warning">Ota työn alle</button><br><br>
                 </form>
                   </div>
                 <?php endforeach; ?>
@@ -161,7 +161,7 @@ require_once('tcpdf/tcpdf.php');
 </form>
 
 <!--Nappi varattujen töitten tarkasteluun-->
-<a href="omat_tyot.php"><button name="omatyo" class="btn btn-danger omatyo">Varatut työt</button></a>
+<a href="omat_tyot.php"><button name="omatyo" class="btn btn-primary omatyo">Varatut työt</button></a>
 
 <!-- Luo raportti button -->
 <form action="generate_pdf.php" method="POST" target="_blank" class="float-right mt-2">
