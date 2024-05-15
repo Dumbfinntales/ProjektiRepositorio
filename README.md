@@ -1,14 +1,17 @@
 # ProjektiRepositorio
- Yay Testataan näkyykö kaikille!!!
-kokeillaanpa sitä.
-Satunnaista tavaraa
-Lisää satunnaista!!!
+Tietokanta:
+$servername = "localhost";
+$kayttajatunnus = "testiuser";
+$salasana = "salasana12";
+$database = "rautio";
+-----------------------
+Sivustolle kirjautuminen:
 
-derp
-        |.-----.|
-        ||x . x||
-        ||_.-._||
-        `--)-(--`
-       __[=== o]___
-      |:::::::::::|\
-jgs   `-=========-`()
+Tunnus1: asukas
+Salasana: asukas12
+
+Tunnus2: isannoitsija
+Salasana: isannoitsija12
+
+Tunnus3: tyontekija
+Salasana: tyontekija12
