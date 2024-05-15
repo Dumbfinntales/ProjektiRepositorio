@@ -61,7 +61,7 @@ $html .= '<table border="1" cellpadding="5">
             <tr>
               <th>Kohde</th>
               <th>Viesti</th>
-              <th>Lemmikit</th>
+              <th>Toimenpide</th>
               <th>Ilmoituspvm</th>
               <th>Valmispvm</th>
               <th>Kuittaus</th>
@@ -72,7 +72,7 @@ foreach ($entries as $entry) {
     $html .= '<tr>';
     $html .= '<td>' . $entry['kohde'] . '</td>';
     $html .= '<td>' . $entry['viesti'] . '</td>';
-    $html .= '<td>' . $entry['lemmikit'] . '</td>';
+    $html .= '<td>' . $entry['toimenpide'] . '</td>';
     $html .= '<td>' . $entry['pvm'] . '</td>';
     $html .= '<td>' . $entry['valmispvm'] . '</td>';
     $html .= '<td>' . $entry['tyontekija_etunimi'] . ' ' . $entry['tyontekija_sukunimi'] . '</td>';
