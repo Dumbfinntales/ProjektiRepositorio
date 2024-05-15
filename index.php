@@ -168,18 +168,14 @@
         <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
           <!-- Yhteystiedot -->
           <h6 class="text-uppercase fw-bold mb-4">Yhteystiedot</h6>
-          <p><i class="fas fa-home me-3"></i> Tornio, 95400, Suomi</p>
-          <p>
-            <i class="fas fa-envelope me-3"></i>
-            r.autio@gmail.com
-          </p>
+          <p><i class="fas fa-home me-3"></i> Jokikatu 3, 95400, Tornio </p>
+          <p><i class="fas fa-envelope me-3"></i> r.autio@kiinteistohuolto.com</p>
           <p><i class="fas fa-phone me-3"></i> +358 50 1200</p>
+          <p>Y-tunnus: 2345671-8</p>
         </div>
   </section>
-    <div class="p-4">
+    <div class="p-2">
       © 2024 Copyright: KoodariRyhmä
-      <!--<a class="text-reset fw-bold" href="https://mdbootstrap.com/">MDBootstrap.com</a>-->
-      <!--Jätän tuon ylemmän koodin tähän jos myöhemmin tarvitsee johonkin kivaan-->
     </div>
   </div>
 </footer>
