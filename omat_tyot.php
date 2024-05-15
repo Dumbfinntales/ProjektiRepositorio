@@ -114,7 +114,8 @@ try {
                 <form action="php/valmis_tyo.php" method="POST">
                   <input type="hidden" name="vikaID" value="<?php echo $entry['vikaID']; ?>">
                   <input type="hidden" name="tyontekijaID" value="<?php echo $entry['tyontekijaID']; ?>">
-                  <textarea class="form-control" name="toimenpide" placeholder="Kirjoita toimenpiteesi"></textarea><br>
+                  <textarea class="form-control" name="toimenpide" required oninvalid="this.setCustomValidity('Toimenpide pitää kirjoittaa!')"
+                  placeholder="Kirjoita toimenpiteesi"></textarea><br>
                   <button name="valmis" type="submit" class="btn btn-warning">Merkkaa tehdyksi</button>
                 </form>
             </div>
